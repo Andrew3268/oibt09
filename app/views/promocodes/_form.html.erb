@@ -4,11 +4,22 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :code_title %>
-    <%= f.input :code_hashtag %>
+    <%= f.input :code_image, label: "Image URL" %>
+    <%= f.input :code_title, label: "Product Title" %>
+    <%= f.input :code_link, label: "Product URL" %>
+    <%= f.input :code_hashtag, label: "Hashtag" %>
+    <%= f.input :code_spare_01, label: "Promotion Code" %>
+    <%= f.input :code_icode_price, label: "Current Price" %>
+    <%= f.input :code_wacode_price, label: "List Price" %>
+    <%= f.input :code_pct, label: "Percentage" %>
+    <%= f.input :code_rating, label: "Rating" %>
+    <%= f.input :code_review_count, label: "Review Count" %>
+    <%= f.input :code_description, label: "Description" %>
+    <%= f.input :code_source, label: "Source" %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
