@@ -1,5 +1,6 @@
 class PromocodesController < ApplicationController
   before_action :set_promocode, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /promocodes
   # GET /promocodes.json
@@ -25,7 +26,7 @@ class PromocodesController < ApplicationController
   # POST /promocodes.json
   def create
     @promocode = Promocode.new(promocode_params)
-
+    @promocode.user = current_user
     respond_to do |format|
       if @promocode.save
         format.html { redirect_to @promocode, notice: 'Promocode was successfully created.' }

@@ -1,6 +1,15 @@
-<p id="notice"><%= notice %></p>
+<h1>디플로이는 되었다. 이제 다시 시작하다!!!</h1>
 
-<h1>Promocodes</h1>
+<% if current_user && current_user.admin %>
+  <p>I am Admin!!</p>
+<% end %>
+
+<% if current_user %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+  <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
 
 <table>
   <thead>
@@ -16,9 +25,11 @@
       <tr>
         <td><%= promocode.code_title %></td>
         <td><%= promocode.code_hashtag %></td>
-        <td><%= link_to 'Show', promocode %></td>
-        <td><%= link_to 'Edit', edit_promocode_path(promocode) %></td>
-        <td><%= link_to 'Destroy', promocode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user && current_user.admin %>
+          <td><%= link_to 'Show', promocode %></td>
+          <td><%= link_to 'Edit', edit_promocode_path(promocode) %></td>
+          <td><%= link_to 'Destroy', promocode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Code title:</strong>
   <%= @promocode.code_title %>
@@ -10,5 +8,8 @@
   <%= @promocode.code_hashtag %>
 </p>
 
-<%= link_to 'Edit', edit_promocode_path(@promocode) %> |
-<%= link_to 'Back', promocodes_path %>
+
+<% if current_user && current_user.admin %>
+  <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
+  <%= link_to 'Back', promocodes_path %>
+<% end %>
