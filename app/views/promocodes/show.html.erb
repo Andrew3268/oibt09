@@ -1,16 +1,95 @@
-<p>
-  <strong>Code title:</strong>
-  <%= @promocode.code_title %>
-</p>
+<div class="header show-header">
+  <%= render 'promocodes/header' %>
+</div>
 
-<p>
-  <strong>Code hashtag:</strong>
-  <%= @promocode.code_hashtag %>
-</p>
+<div class="show-wrap">
+  <div class="wrap">
 
+    <div class="container clearfix">
+      <a href="/"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="뒤로가기" /></a>
+      <div class="image-box">
+        <img src="<%= @promocode.code_image %>" alt="<%= @promocode.code_title %>", title="<%= @promocode.code_title %>" />
+      </div>
+      
+      <div class="title">
+        <h2 class="line-break-02"><%= @promocode.code_title %></h2>
+      </div>
+      <h2 class="summary_title">SUMMARY</h2>
+      <div class="receipt">
+        <!-- Button Section - Text(left) -->
+        <div class="receipt__grid1">
+          <p>Offer Price</p>
+          <% if @promocode.code_spare_01.present? %>
+            <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+            <p>Promotion Code</p>
+          <% else %>
+            <% hotdeal_pct = 0 %>
+            <% hotdeal_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
+            <p>Discount (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
+          <% end %>
 
-<% if current_user && current_user.admin %>
-  <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
-  <%= link_to 'Back', promocodes_path %>
-  <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+          <hr>
+
+          <p class="total_text">Total</p>
+        </div>
+
+        <!-- Summary Section - Price(right) -->
+        <div class="receipt__grid2">
+          <p><em>-</em> <%= number_to_currency(@promocode.code_wacode_price) %></p>
+
+          <% if @promocode.code_spare_01.present? %>
+            <% promo_price = 0 %>
+            <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
+            <p>- <%= number_to_currency(promo_price) %></p>
+            <p><%= @promocode.code_spare_01 %></p>
+          <% else %>
+            <% discount_price = 0 %>
+            <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
+            <p>- <%= number_to_currency(discount_price) %></p>
+          <% end %>
+          
+          <hr>
+
+          <% if @promocode.code_spare_01.present? %>
+            <% promo_total = 0 %>
+            <% promo_total = @promocode.code_wacode_price -  promo_price %>
+            <p class="total_price "><%= number_to_currency(promo_total) %></p>
+          <% else %>
+            <p class="total_price "><%= number_to_currency(@promocode.code_icode_price) %></p>
+          <% end %>
+          
+        </div>
+
+      </div>
+      <!-- Button Section -->
+      <div class="btn">
+        <a target="_blank" href="<%= @promocode.code_link %>">Check it out on Amazon</a>
+      </div>
+      <% if current_user && current_user.admin %>
+        <div class="admin">
+          <%= link_to 'Back', promocodes_path %> | 
+          <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
+          <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+
+     <!-- <div class="related">
+      <script type="text/javascript">
+      amzn_assoc_placement = "adunit0";
+      amzn_assoc_tracking_id = "3628-20";
+      amzn_assoc_ad_mode = "search";
+      amzn_assoc_ad_type = "smart";
+      amzn_assoc_marketplace = "amazon";
+      amzn_assoc_region = "US";
+      amzn_assoc_default_search_phrase = "<%= @promocode.code_title %>";
+      amzn_assoc_default_category = "All";
+      amzn_assoc_linkid = "10a626d082cd5d1d67d4b8a2afc6ae3d";
+      amzn_assoc_title = "Shop Related Products";
+      amzn_assoc_search_bar = "false";
+      </script>
+      <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+    </div> -->
+
+  </div>
+</div>

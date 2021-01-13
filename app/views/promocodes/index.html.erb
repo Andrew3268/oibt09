@@ -6,7 +6,8 @@
 <div class="index-wrap">
 
   <div class="wrap">
-    <h1>디플로이는 되었다. 이제 다시 시작하다!!!</h1>
+
+    <h1>Catch Amazon Deals</h1>
 
     <% if current_user && current_user.admin %>
       <p>I am Admin!!</p>
@@ -24,10 +25,10 @@
       <% @promocodes.each do |promocode| %>
         <div class="card">
           <div class="image-box">
-            <a href="/promocodes/<%= promocode.id %>"><img src="<%= promocode.code_image %>"></a>
+            <a href="/promocodes/<%= promocode.id %>"><img src="<%= promocode.code_image %>" alt="<%= promocode.code_title %>", title="<%= promocode.code_title %>"></a>
           </div>
           <div class="inner">
-            <p><%= link_to promocode.code_title, promocode %></p>
+            <p class="line-break-01"><%= link_to promocode.code_title, promocode %></p>
 
             <% if promocode.code_spare_01.present? %>
               <% promocode_price = 0 %>
@@ -40,7 +41,13 @@
             <% end %>
             
           </div>
-          <div class="pct"><p><%= number_to_percentage(promocode.code_pct, precision: 0) %></p></div>
+          <% if promocode.code_spare_01.present? %>
+            <div class="pct"><p><%= number_to_percentage(promocode.code_pct, precision: 0) %></p></div>
+          <% else %>
+            <% hotdeal_pct = 0 %>
+            <% hotdeal_pct =  (promocode.code_wacode_price - promocode.code_icode_price) / promocode.code_wacode_price * 100 %>
+            <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %></p></div>
+          <% end %>
         </div>
       <% end %>
 
