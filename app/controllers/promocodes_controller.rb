@@ -5,8 +5,10 @@ class PromocodesController < ApplicationController
   # GET /promocodes
   # GET /promocodes.json
   def index
-    @promocodes = Promocode.all.order("created_at DESC")
+    @pagy, @promocodes = pagy(Promocode.all.order("created_at DESC"), items: 80)
   end
+
+
 
   # GET /promocodes/1
   # GET /promocodes/1.json

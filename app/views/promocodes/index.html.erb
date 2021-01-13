@@ -1,7 +1,6 @@
-<div class="header">
+<!-- <div class="header">
   <%= render 'promocodes/header' %>
-</div>
-
+</div> -->
 
 <div class="index-wrap">
 
@@ -21,7 +20,7 @@
       <%= link_to 'Sign in', new_user_session_path %>
     <% end %>
 
-    <div class="product-border">
+    <div class="product-border clearfix">
       <% @promocodes.each do |promocode| %>
         <div class="card">
           <div class="image-box">
@@ -52,6 +51,11 @@
       <% end %>
 
     </div>
+    <%= raw pagy_nav(@pagy) %>
+
+
+
+
 
 
 

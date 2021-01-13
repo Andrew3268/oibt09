@@ -5,6 +5,7 @@ ruby '3.0.0'
 gem 'simple_form'
 gem 'devise'
 gem 'capistrano-rails-console', require: false
+gem 'pagy'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
