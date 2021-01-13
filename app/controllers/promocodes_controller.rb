@@ -6,6 +6,25 @@ class PromocodesController < ApplicationController
   # GET /promocodes.json
   def index
     @pagy, @promocodes = pagy(Promocode.all.order("created_at DESC"), items: 80)
+    set_meta_tags title: 'The Best Deals and Coupons',
+                  site: 'Oh,igottabuythis',
+                  revierse: true,
+                  description: 'Take the best deals and coupons',
+                  keywords: 'Amazon, deals, promo codes, coupons',
+                  twitter: {
+                    card: "summary",
+                    site: "@OhIgottabuythis",
+                    title: 'The Best Deals and Coupons',
+                    description: 'Take the best deals and coupons',
+                    # image: @hotdeal.h_image
+                  },
+                  og: {
+                    title: 'The Best Deals and Coupons',
+                    description: 'Take the best deals and coupons',
+                    type: 'website',
+                    url: 'www.ohigottabuythis.net/promocodes',
+                    # image: @hotdeal.h_image
+                  }
   end
 
 
@@ -13,6 +32,25 @@ class PromocodesController < ApplicationController
   # GET /promocodes/1
   # GET /promocodes/1.json
   def show
+    set_meta_tags title: @promocode.code_title,
+                  site: 'Catch Amazon Deals',
+                  revierse: true,
+                  description: @promocode.code_title,
+                  keywords: 'amazondeals hotdeals promocode',
+                  twitter: {
+                    card: "summary",
+                    site: "@OhIgottabuythis",
+                    title: @promocode.code_title,
+                    description: @promocode.code_title,
+                    image: @promocode.code_image
+                  },
+                  og: {
+                    title: @promocode.code_title,
+                    description: @promocode.code_title,
+                    type: 'website',
+                    url: promocode_url(@promocode),
+                    image: @promocode.code_image
+                  }
   end
 
   # GET /promocodes/new
