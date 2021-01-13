@@ -1,0 +1,10 @@
+.product-border{}
+.product-border .card{float:left;width:23%;height:300px;margin:1%;position:relative;border:1px solid #ccc;border-radius:20px;}
+.product-border .card .pct{position:absolute;top:5px;left:5px;color:#fff;border-radius:30%;background:#48cfad;}
+.product-border .card .pct p{width:45px;height:45px;display:table-cell;vertical-align:middle;text-align:center;padding:5px;}
+.product-border .card .image-box{width:270px;height:200px;position:relative;}
+.product-border .card .image-box img{width:85%;height:85%;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:contain;} 
+.product-border .inner{padding:10px 15px;margin-top:25px;}
+.product-border .inner p{word-break:keep-all;line-height:1.4;height:1.5em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:box;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
+.product-border .inner span.list_price{color:#ccc;text-decoration:line-through;}
+.product-border .inner span.current_price{font-size:20px;font-weight:600;color:#48cfad;}

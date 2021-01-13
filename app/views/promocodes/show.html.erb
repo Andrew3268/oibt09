@@ -12,4 +12,5 @@
 <% if current_user && current_user.admin %>
   <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
   <%= link_to 'Back', promocodes_path %>
+  <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
