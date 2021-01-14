@@ -23,7 +23,7 @@
 
 
 /* Show Page*/
-.container{width:800px;margin:70px auto 0 auto;box-shadow:0 0 20px 0 rgba(0,0,0,.06);;border-radius:20px;padding:20px;} 
+.container{width:800px;margin:0 auto;box-shadow:0 0 20px 0 rgba(0,0,0,.06);;border-radius:20px;padding:20px;} 
 .show-wrap .related{width:800px;margin:0 auto;}
 .show-wrap .container .go_back{display:none;}
 .show-wrap .image-box{float:left;width:45%;margin-right:5%;position:relative;height:350px;}
@@ -31,8 +31,6 @@
 .show-wrap .summary_title{margin-top:2em;}
 .show-wrap .receipt{float:left;width:50%;height:150px;display:grid;grid-template-columns:2fr 1fr;}
 .show-wrap .receipt__grid1 p span{font-size:12px;}
-.show-wrap .receipt__grid1 p em{color:#68d391;}
-.show-wrap .receipt__grid2{text-align:right;}
 .show-wrap .receipt__grid2 p em{color:#fff}
 .show-wrap .total_price{font-size:20px;color:#68d391;font-weight:600;}
 .show-wrap .total_text{font-size:20px;}
@@ -58,8 +56,6 @@
   .show-wrap .container .go_back{display:block;width:40px;height:40px;opacity:0.1;margin:1em 0 0 1.5em;}
   /*.show-wrap .title-m{display:block;margin:0.5em 2em 0 2em;}
   .show-wrap .title_m h2{font-size:17px;}*/
-  .show-wrap .title{margin:0 2em 0 2em}
-  .show-wrap .title h2{font-size:15px;}
   .show-wrap .image-box{width:100%;height:300px;margin-top:-1.5em;padding-bottom:1.7em;}
   .show-wrap .image-box img{width:75%;height:75%;}
   .show-wrap .summary_title{margin:0.5em 3em -2.5em 1.2em;}
