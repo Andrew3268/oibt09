@@ -29,12 +29,12 @@
         <div class="receipt__grid1">
           <p>Offer Price</p>
           <% if @promocode.code_spare_01.present? %>
-            <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+            <p>Discount <span>by Code</span> <em>(<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</em></p>
             <p>Promotion Code</p>
           <% else %>
             <% hotdeal_pct = 0 %>
             <% hotdeal_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
-            <p>Discount (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
+            <p>Discount <em>(<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</em></p>
           <% end %>
 
           <hr>
