@@ -87,7 +87,7 @@
 
       <% if current_user && current_user.admin %>
         <div class="sharing">
-            <div id="facebook_ctn">
+            <span id="facebook_ctn">
               <p>Available on Amazon NOW!!</p>
               <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
 
@@ -102,7 +102,7 @@
               <% end %>
 
               <p class="hashtag">#amazondeals #amazoncoupons #promocodes</p>
-            </div>
+            </span>
         </div>
       <% end %>
 
@@ -141,6 +141,5 @@
   };
   copyButton.addEventListener("click", (e) => copyText(e));
   copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
-
 </script>
 
