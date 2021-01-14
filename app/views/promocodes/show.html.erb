@@ -7,24 +7,22 @@
 
     <div class="container clearfix">
       <a href="/"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="뒤로가기" /></a>
-      <div class="image-box clearfix">
+      <div class="image-box">
         <img src="<%= @promocode.code_image %>" alt="<%= @promocode.code_title %>" title="<%= @promocode.code_title %>" />
       </div>
 
-
-      
       <% if current_user && current_user.admin %>
         <div class="macro-btn">
           <button id="facebook_btn">FBcopy</button>
           <%= render 'promocodes/sns' %>
+          
+          <!-- <button id="twitter_btn">Twiteer</button> -->
         </div>
       <% end %>
 
       <div class="title">
         <h2 class="line-break-02"><%= @promocode.code_title %></h2>
       </div>
-
-      
       <h2 class="summary_title">SUMMARY</h2>
       <div class="receipt">
         <!-- Button Section - Text(left) -->
@@ -83,7 +81,7 @@
           <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
           <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
-      <% end %> 
+      <% end %>
 
 
 
@@ -104,10 +102,10 @@
               <% end %>
 
               <p class="hashtag">#amazondeals #amazoncoupons #promocodes</p>
-              <p>HASHTAG: <%= render_with_hashtags(@promocode.code_hashtag) %></p>
             </span>
         </div>
       <% end %>
+
 
     </div><!--./container-->
 

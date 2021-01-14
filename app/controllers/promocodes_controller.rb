@@ -1,6 +1,6 @@
 class PromocodesController < ApplicationController
   before_action :set_promocode, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index, :hashtags]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /promocodes
   # GET /promocodes.json
@@ -51,11 +51,6 @@ class PromocodesController < ApplicationController
                     url: promocode_url(@promocode),
                     image: @promocode.code_image
                   }
-  end
-
-  def hashtags
-    tag = Tag.find_by(name: params[:name])
-    @pagy, @promocodes = pagy(tag.promocodes, items: 80)
   end
 
   # GET /promocodes/new
