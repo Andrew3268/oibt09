@@ -5,22 +5,13 @@
 <div class="index-wrap">
 
   <div class="wrap">
-    <div class="visual">
-      <h1>Catch Amazon Deals</h1>
-      <%= render 'promocodes/categories' %>
+    <!-- <h1>Catch Amazon Deals</h1> -->
+    <div class="where-hashtag">
+      <% if params[:name].present? %>
+        <p><span>#<%= params[:name] %></span></p>
+      <% end %>
     </div>
 
-    <% if current_user && current_user.admin %>
-      <p>I am Admin!!</p>
-      <%= link_to 'New Promocode', new_promocode_path %>
-    <% end %>
-
-    <% if current_user %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign up', new_user_registration_path %>
-      <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
 
     <div class="product-border clearfix">
       <% @promocodes.each do |promocode| %>
@@ -54,15 +45,6 @@
 
     </div>
     <%= raw pagy_nav(@pagy) %>
-
-
-
-
-
-
-
-
-
 
   </div><!--./wrap-->
 </div><!--./index-wrap->

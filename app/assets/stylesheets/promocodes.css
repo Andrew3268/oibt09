@@ -1,4 +1,6 @@
 /* Index Pgae */
+.index-wrap{}
+.index-wrap .visual{}
 .product-border{}
 .product-border .card{float:left;width:23%;height:300px;margin:1%;position:relative;}
 .product-border .card .pct{position:absolute;top:5px;left:5px;color:#fff;border-radius:30%;background:#48cfad;}
@@ -11,6 +13,7 @@
 .product-border .inner span.current_price{font-size:20px;font-weight:600;color:#48cfad;}
 
 @media screen and (max-width:640px){
+  .index-wrap .visual{margin:0 1%;}
   .index-wrap .wrap{margin:1%;}
   .product-border .card{width:48%;}  
   .product-border .card .image-box{width:100%;margin:0;}
@@ -48,9 +51,6 @@
 .show-wrap .sharing p.was_price{}
 .show-wrap .sharing span.is_price{}
 
-
-
-
 @media screen and (max-width:640px){
   .show-header{display:none;}
   .show-wrap .wrap{margin:0;}
@@ -58,7 +58,7 @@
   .show-wrap .container .go_back{display:block;width:40px;height:40px;opacity:0.1;margin:1em 0 0 1.5em;}
   /*.show-wrap .title-m{display:block;margin:0.5em 2em 0 2em;}
   .show-wrap .title_m h2{font-size:17px;}*/
-  .show-wrap .title{margin:0 2em 0 2em}
+  .show-wrap .title{margin:300px 2em 0 2em}
   .show-wrap .title h2{font-size:15px;}
   .show-wrap .image-box{width:100%;height:300px;margin-top:-1.5em;padding-bottom:1.7em;}
   .show-wrap .image-box img{width:75%;height:75%;}
@@ -73,8 +73,3 @@
   .show-wrap .btn{float:none;width:auto;margin:0 5%;}
   .show-wrap .related{width:100%;margin:0 2%;}
 }
-
-
-
-
-
