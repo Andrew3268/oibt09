@@ -1,0 +1,4 @@
+<a class="facebook" id="shareFB" href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for([@promocode, { 
+ only_path: false }]) %>&t=<%= @promocode.code_title %>"
+ onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"  target="_blank" title="Share on Facebook"><!-- <li><i class="fa fa-facebook"></i> --><span>Facebook</span></a> 
+<script type="text/javascript">document.getElementById("shareFB").setAttribute("href", "https://www.facebook.com/sharer/sharer.php?u=" + document.URL);</script>

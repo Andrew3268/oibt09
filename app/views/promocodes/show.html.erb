@@ -10,7 +10,16 @@
       <div class="image-box">
         <img src="<%= @promocode.code_image %>" alt="<%= @promocode.code_title %>" title="<%= @promocode.code_title %>" />
       </div>
-      
+
+      <% if current_user && current_user.admin %>
+        <div class="macro-btn">
+          <button id="facebook_btn">FBcopy</button>
+          <%= render 'promocodes/sns' %>
+          
+          <!-- <button id="twitter_btn">Twiteer</button> -->
+        </div>
+      <% end %>
+
       <div class="title">
         <h2 class="line-break-02"><%= @promocode.code_title %></h2>
       </div>
@@ -61,6 +70,7 @@
         </div>
 
       </div>
+
       <!-- Button Section -->
       <div class="btn">
         <a target="_blank" href="<%= @promocode.code_link %>">Check it out on Amazon</a>
@@ -72,7 +82,35 @@
           <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>
-    </div>
+
+
+
+      <% if current_user && current_user.admin %>
+        <div class="sharing">
+            <div id="facebook_ctn">
+              <p>Available on Amazon NOW!!</p>
+              <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
+
+              <% if @promocode.code_spare_01.present? %>
+                <% code_now = 0%>
+                <% code_now = @promocode.code_wacode_price - promo_price %>
+                <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
+                <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
+              <% else %>
+                <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
+                <p>You can save: <%= number_to_currency(discount_price) %></p> 
+              <% end %>
+
+              <p class="hashtag">#amazondeals #amazoncoupons #promocodes</p>
+            </div>
+        </div>
+      <% end %>
+
+
+    </div><!--./container-->
+
+    
+
 
      <!-- <div class="related">
       <script type="text/javascript">
@@ -93,3 +131,16 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+  const textElement = document.getElementById("facebook_ctn");
+  const copyButton = document.getElementById("facebook_btn");
+  const copyText = (e) => {
+    window.getSelection().selectAllChildren(textElement);
+    document.execCommand("copy");
+  };
+  copyButton.addEventListener("click", (e) => copyText(e));
+  copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+
+</script>
+
