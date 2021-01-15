@@ -10,13 +10,12 @@
       <p>Don't pay full price! Save your money!</p>
       <h1>HOTDEAL-FUL</h1>
       <%= render 'promocodes/categories' %>
+      <div class="where-hashtag">
+        <% if params[:name].present? %>
+          <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+        <% end %>
+      </div>
     </div>
-
-    <% if current_user && current_user.admin %>
-      <p>I am Admin!!</p>
-      <%= link_to 'New Promocode', new_promocode_path %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% end %>
 
     <div class="product-border clearfix">
       <% @promocodes.each do |promocode| %>

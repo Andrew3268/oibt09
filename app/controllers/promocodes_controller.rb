@@ -1,26 +1,26 @@
 class PromocodesController < ApplicationController
   before_action :set_promocode, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index, :hashtags]
 
   # GET /promocodes
   # GET /promocodes.json
   def index
     @pagy, @promocodes = pagy(Promocode.all.order("created_at DESC"), items: 80)
-    set_meta_tags title: 'The Best Deals and Coupons',
+    set_meta_tags title: 'The best Deals, Coupons, Promocodes on Amazon',
                   site: 'Oh,igottabuythis',
                   revierse: true,
-                  description: 'Take the best deals and coupons',
+                  description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
                   keywords: 'Amazon, deals, promo codes, coupons',
                   twitter: {
                     card: "summary",
                     site: "@OhIgottabuythis",
-                    title: 'The Best Deals and Coupons',
-                    description: 'Take the best deals and coupons',
+                    title: 'The best Deals, Coupons, Promocodes on Amazon',
+                    description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
                     # image: @hotdeal.h_image
                   },
                   og: {
-                    title: 'The Best Deals and Coupons',
-                    description: 'Take the best deals and coupons',
+                    title: 'The best Deals, Coupons, Promocodes on Amazon',
+                    description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
                     type: 'website',
                     url: 'www.ohigottabuythis.net/promocodes',
                     # image: @hotdeal.h_image
@@ -51,6 +51,11 @@ class PromocodesController < ApplicationController
                     url: promocode_url(@promocode),
                     image: @promocode.code_image
                   }
+  end
+
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @pagy, @promocodes = pagy(tag.promocodes, items: 80)
   end
 
   # GET /promocodes/new

@@ -1,36 +1,53 @@
 <div class="category-pc clearfix">
   <ul>
-    <li><a href="/sales/shashtag/일레트로닉">일레트로닉,</a></li>
-    <li><a href="/sales/shashtag/패션">패션,</a></li>
-    <li><a href="/sales/shashtag/뷰티">뷰티,</a></li>
-    <li><a href="/sales/shashtag/생필품">생필품,</a></li>
-    <li><a href="/sales/shashtag/키친">키친,</a></li>
-    <li><a href="/sales/shashtag/리빙">리빙,</a></li>
-    <li><a href="/sales/shashtag/인테리어">인테리어,</a></li>
-    <li><a href="/sales/shashtag/야외활동">야외활동,</a></li>
-    <li><a href="/sales/shashtag/키즈">유아/키즈,</a></li>
-    <li><a href="/sales/shashtag/반려동물">반려동물,</a></li>
-    <li><a href="/sales/shashtag/헬스">헬스&건강,</a></li>
+    <li><a href="/">Everything</a></li>
+    <li><a href="/promocodes/hashtag/home">home,</a></li>
+    <li><a href="/promocodes/hashtag/kitchen">kitchen,</a></li>
+    <li><a href="/promocodes/hashtag/pet">pet,</a></li>
+    <li><a href="/promocodes/hashtag/생필품">생필품,</a></li>
+    <li><a href="/promocodes/hashtag/키친">키친,</a></li>
+    <li><a href="/promocodes/hashtag/리빙">리빙,</a></li>
+    <li><a href="/promocodes/hashtag/인테리어">인테리어,</a></li>
+    <li><a href="/promocodes/hashtag/야외활동">야외활동,</a></li>
+    <li><a href="/promocodes/hashtag/키즈">유아/키즈,</a></li>
+    <li><a href="/promocodes/hashtag/반려동물">반려동물,</a></li>
+    <li><a href="/promocodes/hashtag/헬스">헬스&건강,</a></li>
   </ul>
 </div>
 
 
 
 <div class="category-mobile clearfix">
-  <ul class="left">
-    <li><a href="/sales/shashtag/일레트로닉">일레트로닉,</a></li>
-    <li><a href="/sales/shashtag/패션">패션,</a></li>
-    <li><a href="/sales/shashtag/뷰티">뷰티,</a></li>
-    <li><a href="/sales/shashtag/생필품">생필품,</a></li>
-    <li><a href="/sales/shashtag/키친">키친,</a></li>
-    <li><a href="/sales/shashtag/리빙">리빙,</a></li>
-    <li><a href="/sales/shashtag/인테리어">인테리어,</a></li>
-    <li><a href="/sales/shashtag/야외활동">야외활동,</a></li>
-    <li><a href="/sales/shashtag/키즈">유아/키즈,</a></li>
-    <li><a href="/sales/shashtag/반려동물">반려동물,</a></li>
-    <li><a href="/sales/shashtag/헬스">헬스&건강,</a></li>
-  </ul>
-  <ul class="right">
-    <li><a href="/bridge/more_sale">+ 더보기</a></li>
-  </ul>
+  <nav>
+    <ul class="left">
+      <li><a href="/">Everything</a></li>
+      <li><a href="/promocodes/hashtag/home">home,</a></li>
+      <li><a href="/promocodes/hashtag/kitchen">kitchen,</a></li>
+      <li><a href="/promocodes/hashtag/pet">pet,</a></li>
+      <li><a href="/promocodes/hashtag/생필품">생필품,</a></li>
+      <li><a href="/promocodes/hashtag/키친">키친,</a></li>
+      <li><a href="/promocodes/hashtag/리빙">리빙,</a></li>
+      <li><a href="/promocodes/hashtag/인테리어">인테리어,</a></li>
+      <li><a href="/promocodes/hashtag/야외활동">야외활동,</a></li>
+      <li><a href="/promocodes/hashtag/키즈">유아/키즈,</a></li>
+      <li><a href="/promocodes/hashtag/반려동물">반려동물,</a></li>
+      <li><a href="/promocodes/hashtag/헬스">헬스&건강,</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="/bridge/more_sale">+ 더보기</a></li>
+    </ul>
+  </nav>
 </div>
+
+
+<script type="text/javascript">
+  $(window).scroll(function (e) {
+    let nav = $('nav');
+    let scrolled = $(window).scrollTop();
+    if (scrolled > 70) {
+      nav.addClass('fixed');
+    } else {
+      nav.removeClass('fixed');
+    }
+  });
+</script>

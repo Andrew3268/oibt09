@@ -40,9 +40,14 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
 .line-break-02{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:box;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 
 /* Pagination */
-.pagy-nav{margin:15px 2% 0 2%;font-size:15px;}
+.pagy-nav{margin:15px 2% 30px 2%;font-size:15px;}
 .pagy-nav .page{margin-right:7px;}
-.pagy-nav .active{background:#48cfad;padding:5px 10px;color:#fff;border-radius:20px;}
+.pagy-nav .active{background:#68d391;padding:5px 10px;color:#fff;border-radius:20px;}
+
+/* Hashtag Location */
+.where-hashtag{}
+.where-hashtag p{font-size:30px;font-weight:600;}
+.hashtag-through{display:inline;background-image:linear-gradient(180deg, transparent 0, transparent 35%, #fcf113 35%, #fcf113 65%, transparent 65%, transparent 100%);background-repeat:no-repeat;transition:background-size 0.4s ease;background-size:100% 100%;}
 
 
 /* Header */
@@ -78,3 +83,28 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
   .header .nav-open i:nth-child(2){margin-top:4px;opacity:1;}
   .header .nav-open i:nth-child(3){margin-top:4px;}
 }
+
+
+/* From */
+.hotdeal_form{width:1200px;}
+.hotdeal_form .basic_info{width:800px;}
+.hotdeal_form input, .hotdeal_form textarea{display:block;width:100%;height:40px;margin-bottom:20px;border:1px solid #ccc;}
+.hotdeal_form textarea{height:80px;}
+.hotdeal_form trix-editor{min-height:15em;}
+.hotdeal_form label{font-size:13px;}
+.hotdeal_form .pricing div{float:left;;margin:1%;}
+.hotdeal_form .pricing div .promo_code{width:500px;margin-right:1%;}
+.hotdeal_form .pricing div .promo_date{width:300px;}
+.hotdeal_form .form_btn input{margin-top:10px;background:#000;color:#fff;padding:15px 0;}
+
+
+
+
+
+
+
+
+
+
+
+

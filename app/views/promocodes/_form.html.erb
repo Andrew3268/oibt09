@@ -1,23 +1,26 @@
+<div class="hotdeal_form">
+  <%= simple_form_for(@promocode) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for(@promocode) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="basic_info">
+      <%= f.input :code_image, label: "Image URL" %>
+      <%= f.input :code_title, label: "Product Title" %>
+      <%= f.input :code_link, label: "Product URL" %>
+      <%= f.input :code_hashtag, label: "Hashtag" %>
+      <%= f.input :code_spare_01, label: "Promotion Code" %>
+    </div>
+    <div class="pricing">
+      <%= f.input :code_wacode_price, label: "List Price" %>
+      <%= f.input :code_icode_price, label: "Current Price(for hotdeal)" %>
+      <%= f.input :code_pct, label: "Percentage(for code)" %>
+      <%= f.input :code_rating, label: "Rating" %>
+      <%= f.input :code_review_count, label: "Review Count" %>
+    </div>
+    
 
-  <div class="form-inputs">
-    <%= f.input :code_image, label: "Image URL" %>
-    <%= f.input :code_title, label: "Product Title" %>
-    <%= f.input :code_link, label: "Product URL" %>
-    <%= f.input :code_hashtag, label: "Hashtag" %>
-    <%= f.input :code_spare_01, label: "Promotion Code" %>
-    <%= f.input :code_icode_price, label: "Current Price" %>
-    <%= f.input :code_wacode_price, label: "List Price" %>
-    <%= f.input :code_pct, label: "Percentage" %>
-    <%= f.input :code_rating, label: "Rating" %>
-    <%= f.input :code_review_count, label: "Review Count" %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
