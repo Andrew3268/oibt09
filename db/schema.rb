@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_193724) do
+ActiveRecord::Schema.define(version: 2021_01_15_160958) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -98,6 +98,21 @@ ActiveRecord::Schema.define(version: 2021_01_13_193724) do
     t.index ["slug"], name: "index_promocodes_on_slug", unique: true
   end
 
+  create_table "promocodes_tags", id: false, force: :cascade do |t|
+    t.integer "promocode_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["promocode_id"], name: "index_promocodes_tags_on_promocode_id"
+    t.index ["tag_id"], name: "index_promocodes_tags_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -111,4 +126,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_193724) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "promocodes_tags", "promocodes"
+  add_foreign_key "promocodes_tags", "tags"
 end
