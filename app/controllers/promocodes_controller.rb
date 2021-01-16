@@ -9,18 +9,18 @@ class PromocodesController < ApplicationController
     set_meta_tags title: 'The best Deals, Coupons, Promocodes on Amazon',
                   site: 'hotdeal-ful',
                   revierse: true,
-                  description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
-                  keywords: 'Amazon, deals, promo codes, coupons',
+                  description: 'Find the best deals, coupons, promo codes on Amazon. Do not pay full price!!, save your money with us.',
+                  keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
                     card: "summary",
                     site: "@hotdealful",
                     title: 'The best Deals, Coupons, Promocodes on Amazon',
-                    description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
+                    description: 'Find the best deals, coupons, promo codes on Amazon. Do not pay full price!!, save your money with us.',
                     # image: @hotdeal.h_image
                   },
                   og: {
                     title: 'The best Deals, Coupons, Promocodes on Amazon',
-                    description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
+                    description: 'Find the best deals, coupons, promo codes on Amazon. Do not pay full price!!, save your money with us.',
                     type: 'website',
                     url: 'www.hotdealful.com',
                     # image: @hotdeal.h_image
@@ -36,7 +36,7 @@ class PromocodesController < ApplicationController
                   site: @promocode.code_title,
                   revierse: true,
                   description: @promocode.code_title,
-                  keywords: 'amazondeals hotdeals promocode',
+                  keywords: 'amazondeals, hotdeals, promotion code, coupons ',
                   twitter: {
                     card: "summary",
                     site: "@hotdealful",
