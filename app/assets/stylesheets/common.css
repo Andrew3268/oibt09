@@ -36,8 +36,8 @@ body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight
   .wrap{width:auto;margin:0 5%;}
 }
 
-.line-break-01{word-break:keep-all;line-height:1.4;height:1.5em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:box;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
-.line-break-02{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:box;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+.line-break-01{word-break:keep-all;line-height:1.4;height:1.5em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
+.line-break-02{word-break:keep-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 
 /* Pagination */
 .pagy-nav{margin:15px 2% 30px 2%;font-size:15px;}
