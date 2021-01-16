@@ -48,7 +48,7 @@
 .show-wrap .title h2{font-size:17px;font-weight:300;}
 .show-wrap .admin{float:right;width:50%;}
 .show-wrap button, .macro-btn .facebook span{background:#68d391;color:#fff;padding:5px;font-size:13px;}
-.show-wrap button a{color:#fff;}
+.show-wrap .macro-btn a.back-btn{background:#68d391;color:#fff;padding:5px;font-size:13px;color:#fff;display:inline-block;}
 .show-wrap .sharing{width:45%;padding:10px;font-size:10px;}
 .show-wrap .sharing p{}
 .show-wrap .sharing span{display:block;}
