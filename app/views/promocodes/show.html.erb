@@ -1,7 +1,3 @@
-<div class="header show-header">
-  <%= render 'promocodes/header' %>
-</div>
-
 <div class="show-wrap">
   <div class="wrap">
 
@@ -49,7 +45,7 @@
             <% promo_price = 0 %>
             <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
             <p>- <%= number_to_currency(promo_price) %></p>
-            <p><%= @promocode.code_spare_01 %></p>
+            <p class="p-code"><%= @promocode.code_spare_01 %></p>
           <% else %>
             <% discount_price = 0 %>
             <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>

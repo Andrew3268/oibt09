@@ -22,10 +22,10 @@
       <% @promocodes.each do |promocode| %>
         <div class="card">
           <div class="image-box">
-            <a href="/promocodes/<%= promocode.id %>"><img src="<%= promocode.code_image %>" alt="<%= promocode.code_title %>" title="<%= promocode.code_title %>"></a>
+            <a href="/promocodes/<%= promocode.id %>" data-turbolinks="false"><img src="<%= promocode.code_image %>" alt="<%= promocode.code_title %>" title="<%= promocode.code_title %>"></a>
           </div>
           <div class="inner">
-            <p class="line-break-01"><%= link_to promocode.code_title, promocode %></p>
+            <p class="line-break-01" data-turbolinks="false"><%= link_to promocode.code_title, promocode%></p>
 
             <% if promocode.code_spare_01.present? %>
               <% promocode_price = 0 %>
