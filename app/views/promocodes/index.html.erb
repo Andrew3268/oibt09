@@ -14,9 +14,11 @@
     </div>
 
     <% if current_user && current_user.admin %>
-      <p>I am Admin!!</p>
-      <%= link_to 'New Promocode', new_promocode_path %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <div class="index-amdin">
+        <p>I am Admin!!</p>
+        <%= link_to 'New Promocode', new_promocode_path %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      </div>
     <% end %>
 
     <div class="product-border clearfix">

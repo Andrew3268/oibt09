@@ -7,13 +7,13 @@ class PromocodesController < ApplicationController
   def index
     @pagy, @promocodes = pagy(Promocode.all.order("created_at DESC"), items: 80)
     set_meta_tags title: 'The best Deals, Coupons, Promocodes on Amazon',
-                  site: 'Oh,igottabuythis',
+                  site: 'hotdeal-ful',
                   revierse: true,
                   description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
                   keywords: 'Amazon, deals, promo codes, coupons',
                   twitter: {
                     card: "summary",
-                    site: "@OhIgottabuythis",
+                    site: "@hotdealful",
                     title: 'The best Deals, Coupons, Promocodes on Amazon',
                     description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
                     # image: @hotdeal.h_image
@@ -22,7 +22,7 @@ class PromocodesController < ApplicationController
                     title: 'The best Deals, Coupons, Promocodes on Amazon',
                     description: 'Find the bset deals, coupons, promocodes on Amazon. Do not pay full price!!, save your money with us.',
                     type: 'website',
-                    url: 'www.ohigottabuythis.net/promocodes',
+                    url: 'www.hotdealful.com',
                     # image: @hotdeal.h_image
                   }
   end
@@ -33,13 +33,13 @@ class PromocodesController < ApplicationController
   # GET /promocodes/1.json
   def show
     set_meta_tags title: @promocode.code_title,
-                  site: 'Catch Amazon Deals',
+                  site: @promocode.code_title,
                   revierse: true,
                   description: @promocode.code_title,
                   keywords: 'amazondeals hotdeals promocode',
                   twitter: {
                     card: "summary",
-                    site: "@OhIgottabuythis",
+                    site: "@hotdealful",
                     title: @promocode.code_title,
                     description: @promocode.code_title,
                     image: @promocode.code_image
