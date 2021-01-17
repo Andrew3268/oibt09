@@ -1,0 +1,16 @@
+.cat-wrap{width:800px;margin:20px auto 0 auto;}
+.cat-wrap .cat-box{text-align:center;font-size:17px;text-transform:uppercase;}
+.cat-wrap .cat-box a{float:left;width:23%;display:block;border:1px solid #ccc;padding:20px 10px;margin-top:-1px;margin-left:-1px;}
+.cat-wrap .admin{margin-top:5px;}
+.cat-wrap .admin a{margin:0 5px;}
+
+@media screen and (max-width:640px){
+  .cat-wrap{width:100%;margin:20px 2% 0 2%;}
+  .cat-wrap .cat-box{font-size:10px;}
+  .cat-wrap .cat-box a{width:24.2%;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .cat-wrap{width:100%;margin:20px 2% 0 2%;}
+  .cat-wrap .cat-box a{width:24.2%;}
+}

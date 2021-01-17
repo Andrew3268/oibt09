@@ -25,6 +25,7 @@ class PromocodesController < ApplicationController
                     url: 'www.hotdealful.com',
                     # image: @hotdeal.h_image
                   }
+    @categories = Category.all
   end
 
 
@@ -55,7 +56,8 @@ class PromocodesController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @pagy, @promocodes = pagy(tag.promocodes, items: 80)
+    @pagy, @promocodes = pagy(tag.promocodes.order("created_at DESC"), items: 80)
+    @categories = Category.all
   end
 
   # GET /promocodes/new

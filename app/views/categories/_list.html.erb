@@ -1,0 +1,52 @@
+<div class="category-pc clearfix" data-turbolinks="false">
+  <ul>
+    <li><a href="/">Everything</a></li>
+    <% @categories.each do |cat| %>
+      <li><a href="/promocodes/hashtag/<%= cat.category_01 %>"><%= cat.category_01 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_02 %>"><%= cat.category_02 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_03 %>"><%= cat.category_03 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_04 %>"><%= cat.category_04 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_05 %>"><%= cat.category_05 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_06 %>"><%= cat.category_06 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_07 %>"><%= cat.category_07 %>,</a></li>
+      <li><a href="/promocodes/hashtag/<%= cat.category_08 %>"><%= cat.category_08 %></a></li>
+      <li><a href="/categories">+ More</a></li>
+    <% end %> 
+  </ul>
+</div>
+
+
+
+<div class="category-mobile clearfix data-turbolinks="false"">
+  <nav>
+    <ul class="left">
+      <li><a href="/">Everything</a></li>
+        <% @categories.each do |cat| %>
+        <li><a href="/promocodes/hashtag/<%= cat.category_01 %>"><%= cat.category_01 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_02 %>"><%= cat.category_02 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_03 %>"><%= cat.category_03 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_04 %>"><%= cat.category_04 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_05 %>"><%= cat.category_05 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_06 %>"><%= cat.category_06 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_07 %>"><%= cat.category_07 %>,</a></li>
+        <li><a href="/promocodes/hashtag/<%= cat.category_08 %>"><%= cat.category_08 %></a></li>
+      <% end %> 
+    </ul>
+    <ul class="right">
+      <li><a href="/categories">+ More</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<script type="text/javascript">
+  $(window).scroll(function (e) {
+    let nav = $('nav');
+    let scrolled = $(window).scrollTop();
+    if (scrolled > 70) {
+      nav.addClass('fixed');
+    } else {
+      nav.removeClass('fixed');
+    }
+  });
+</script>
