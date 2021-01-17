@@ -9,7 +9,7 @@
     <div class="visual">
       
       <p>Don't pay full price! Save your money!</p>
-      <h1><a href="/">HOTDEAL-FUL</a></h1>
+      <h1><a href="/" data-turbolinks="false">HOTDEAL-FUL</a></h1>
       <%= render 'categories/list' %>
     </div>
 
@@ -43,11 +43,11 @@
             
           </div>
           <% if promocode.code_spare_01.present? %>
-            <div class="pct"><p><%= number_to_percentage(promocode.code_pct, precision: 0) %></p></div>
+            <div class="pct"><p><%= number_to_percentage(promocode.code_pct, precision: 0) %> off</p></div>
           <% else %>
             <% hotdeal_pct = 0 %>
             <% hotdeal_pct =  (promocode.code_wacode_price - promocode.code_icode_price) / promocode.code_wacode_price * 100 %>
-            <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %></p></div>
+            <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p></div>
           <% end %>
         </div>
       <% end %>
