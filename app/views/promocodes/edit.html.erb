@@ -1,5 +1,5 @@
 <% if current_user && current_user.admin %>
-  <div class="wrap">
+  <div class="wrap" data-turbolinks="false">
     <h1>Editing Promocode</h1>
     <%= render 'form', promocode: @promocode %>
     <%= link_to 'Show', @promocode %> |

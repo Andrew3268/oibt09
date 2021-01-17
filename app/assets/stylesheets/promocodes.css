@@ -94,7 +94,7 @@
   .visual ul li a{font-size:15px;}
   .visual .category-pc{display:none;}
   .visual .category-mobile{display:block;border-bottom:1px solid #ccc;}
-  .visual .category-mobile ul.left{float:left;width:80%;}
+  .visual .category-mobile ul.left{float:left;width:98%;}
   .visual .category-mobile ul.right{float:left;width:20%;text-align:center;}
 }
 
@@ -106,7 +106,7 @@
   .visual ul li a{font-size:15px;}
   .visual .category-pc{display:none;}
   .visual .category-mobile{display:block;border-bottom:1px solid #ccc;}
-  .visual .category-mobile ul.left{float:left;width:80%;}
+  .visual .category-mobile ul.left{float:left;width:98%;}
   .visual .category-mobile ul.right{float:left;width:20%;text-align:center;}
 }
 

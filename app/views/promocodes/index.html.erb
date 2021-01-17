@@ -9,7 +9,7 @@
     <div class="visual">
       
       <p>Don't pay full price! Save your money!</p>
-      <h1>HOTDEAL-FUL</h1>
+      <h1><a href="/">HOTDEAL-FUL</a></h1>
       <%= render 'categories/list' %>
     </div>
 
@@ -17,6 +17,7 @@
       <div class="index-amdin" data-turbolinks="false">
         <p>I am Admin!!</p>
         <%= link_to 'New Promocode', new_promocode_path %>
+        <%= link_to 'Categories', categories_path %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>

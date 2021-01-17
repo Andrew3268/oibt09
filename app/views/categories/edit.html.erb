@@ -1,5 +1,5 @@
 <% if current_user && current_user.admin %>
-  <div class="wrap">
+  <div class="wrap"  data-turbolinks="false">
     <h1>Editing Category</h1>
     <%= render 'form', category: @category %>
     <%= link_to 'Show', @category %> |
