@@ -12,6 +12,7 @@
           <a class="back-btn" href="/" data-turbolinks="false">Back</a>
           <button id="facebook_btn">FBcopy</button>
           <%= render 'promocodes/sns' %>
+          <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
         </div>
       <% end %>
 
@@ -67,37 +68,70 @@
 
       <!-- Button Section -->
       <div class="btn">
-        <a target="_blank" href="<%= @promocode.code_link %>">Check it out on Amazon</a>
+        <a class="amz_btn" target="_blank" href="<%= @promocode.code_link %>">Check it out on Amazon</a>
+
+        <% if current_user && current_user.admin %>
+          <div class="admin">
+            <%= link_to 'Back', promocodes_path %> | 
+            <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
+            <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <p>HASHTAG:<%= render_with_hashtags(@promocode.code_hashtag) %></p>
+          </div>
+        <% end %>
       </div>
 
-      <% if current_user && current_user.admin %>
-        <div class="admin">
-          <%= link_to 'Back', promocodes_path %> | 
-          <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
-          <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <p>HASHTAG:<%= render_with_hashtags(@promocode.code_hashtag) %></p>
-        </div>
-      <% end %>
+      
 
+      <!-- SNS Sharing Section -->
       <% if current_user && current_user.admin %>
         <div class="sharing">
-            <span id="facebook_ctn">
-              <p>Available on Amazon NOW!!</p>
-              <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
+          <span id="facebook_ctn">
+            <p>Available on Amazon NOW!!</p>
+            <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
 
-              <% if @promocode.code_spare_01.present? %>
-                <% code_now = 0%>
-                <% code_now = @promocode.code_wacode_price - promo_price %>
-                <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
-                <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
-                <p>Visit our website and get the promotion code</p>
-              <% else %>
-                <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
-                <p>You can save: <%= number_to_currency(discount_price) %></p> 
-              <% end %>
+            <% if @promocode.code_spare_01.present? %>
+              <% code_now = 0%>
+              <% code_now = @promocode.code_wacode_price - promo_price %>
+              <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
+              <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
+              <p>Visit our website and get the promotion code</p>
+            <% else %>
+              <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
+              <p>You can save: <%= number_to_currency(discount_price) %></p> 
+            <% end %>
 
-              <p class="hashtag">#amazondeals #amazoncoupons #promocodes</p>
-            </span>
+            <p class="hashtag">#amazondeals #amazoncoupons #promocodes</p>
+          </span>
+        </div>
+        <hr>
+        <div class="twitter-container">
+          <div class="row">
+            <div class="col-md-12">
+               <span class="js-copytext"> 
+                <div class="sharing">
+                  <span id="facebook_ctn">
+                    <p>Available on Amazon NOW!!</p>
+                    <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
+
+                    <% if @promocode.code_spare_01.present? %>
+                      <% code_now = 0%>
+                      <% code_now = @promocode.code_wacode_price - promo_price %>
+                      <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
+                      <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
+                      <p>Visit our website and get the promotion code</p>
+                      <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p>
+                    <% else %>
+                      <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
+                      <p>You can save: <%= number_to_currency(discount_price) %></p> 
+                      <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p>
+                    <% end %>
+
+                    <p class="hashtag">#amazondeals #amazoncoupons #promocodes</p>
+                  </span>
+                </div>
+              </span>
+            </div>
+         </div>
         </div>
       <% end %>
 
@@ -105,6 +139,7 @@
     </div><!--./container-->
 
     
+
 
 
      <!-- <div class="related">
@@ -138,3 +173,22 @@
   copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
 </script>
 
+
+<script type="text/javascript">
+  var copyBtn = document.querySelector('.js-copybtn');
+  if (copyBtn) {
+      copyBtn.addEventListener('click', function(event) {
+          var copyText= document.querySelector('.js-copytext');
+          var range = document.createRange();
+          range.selectNode(copyText);
+          window.getSelection().addRange(range);
+          try {
+              var successful = document.execCommand('copy');
+              var msg = successful ? 'successful' : 'unsuccessful';
+          } catch(err) {
+
+          }
+          window.getSelection().removeAllRanges();
+      });
+  }
+</script>
