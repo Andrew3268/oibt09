@@ -26,6 +26,10 @@ class PromocodesController < ApplicationController
                     # image: @hotdeal.h_image
                   }
     @categories = Category.all
+    if params[:search]
+      @search_term = params[:search]
+      @promocodes = @promocodes.search_by(@search_term)
+    end
   end
 
 

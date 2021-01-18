@@ -1,99 +1,102 @@
 <div class="top-box"></div>
 <div class="cat-wrap clearfix">
-  
+    
     <% @categories.each do |category| %>
       <div class="cat-box clearfix" data-turbolinks="false">
         <h1>+ More</h1>
-        <% if category.category_01.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_01 %>"><%= category.category_01 %></a>
-        <% end %>
-        <% if category.category_02.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_02 %>"><%= category.category_02 %></a>
-        <% end %>
-        <% if category.category_03.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_03 %>"><%= category.category_03 %></a>
-        <% end %>
-        <% if category.category_04.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_04 %>"><%= category.category_04 %></a>
-        <% end %>
-        <% if category.category_05.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_05 %>"><%= category.category_05 %></a>
-        <% end %>
-        <% if category.category_06.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_06 %>"><%= category.category_06 %></a>
-        <% end %>
-        <% if category.category_07.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_07 %>"><%= category.category_07 %></a>
-        <% end %>
-        <% if category.category_08.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_08 %>"><%= category.category_08 %></a>
-        <% end %>
-        <% if category.category_09.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_09 %>"><%= category.category_09 %></a>
-        <% end %>
-        <% if category.category_10.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_10 %>"><%= category.category_10 %></a>
-        <% end %>
-        <% if category.category_11.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_11 %>"><%= category.category_11 %></a>
-        <% end %>
-        <% if category.category_12.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_12 %>"><%= category.category_12 %></a>
-        <% end %>
-        <% if category.category_13.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_13 %>"><%= category.category_13 %></a>
-        <% end %>
-        <% if category.category_14.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_14 %>"><%= category.category_14 %></a>
-        <% end %>
-        <% if category.category_15.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_15 %>"><%= category.category_15 %></a>
-        <% end %>
-        <% if category.category_16.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_16 %>"><%= category.category_16 %></a>
-        <% end %>
-        <% if category.category_17.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_17 %>"><%= category.category_17 %></a>
-        <% end %>
-        <% if category.category_18.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_18 %>"><%= category.category_18 %></a>
-        <% end %>
-        <% if category.category_19.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_19 %>"><%= category.category_19 %></a>
-        <% end %>
-        <% if category.category_20.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_20 %>"><%= category.category_20 %></a>
-        <% end %>
-        <% if category.category_21.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_21 %>"><%= category.category_21 %></a>
-        <% end %>
-        <% if category.category_22.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_22 %>"><%= category.category_22 %></a>
-        <% end %>
-        <% if category.category_23.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_23 %>"><%= category.category_23 %></a>
-        <% end %>
-        <% if category.category_24.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_24 %>"><%= category.category_24 %></a>
-        <% end %>
-        <% if category.category_25.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_25 %>"><%= category.category_25 %></a>
-        <% end %>
-        <% if category.category_26.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_26 %>"><%= category.category_26 %></a>
-        <% end %>
-        <% if category.category_27.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_27 %>"><%= category.category_27 %></a>
-        <% end %>
-        <% if category.category_28.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_28 %>"><%= category.category_28 %></a>
-        <% end %>
-        <% if category.category_29.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_29 %>"><%= category.category_29 %></a>
-        <% end %>
-        <% if category.category_30.present? %>
-          <a href="/promocodes/hashtag/<%= category.category_30 %>"><%= category.category_30 %></a>
-        <% end %>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for category..." title="Type in a name">
+        <ul id="myUL" >
+          <% if category.category_01.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_01 %>"><%= category.category_01 %></a></li>
+          <% end %>
+          <% if category.category_02.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_02 %>"><%= category.category_02 %></a></li>
+          <% end %>
+          <% if category.category_03.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_03 %>"><%= category.category_03 %></a></li>
+          <% end %>
+          <% if category.category_04.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_04 %>"><%= category.category_04 %></a></li>
+          <% end %>
+          <% if category.category_05.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_05 %>"><%= category.category_05 %></a></li>
+          <% end %>
+          <% if category.category_06.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_06 %>"><%= category.category_06 %></a></li>
+          <% end %>
+          <% if category.category_07.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_07 %>"><%= category.category_07 %></a></li>
+          <% end %>
+          <% if category.category_08.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_08 %>"><%= category.category_08 %></a></li>
+          <% end %>
+          <% if category.category_09.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_09 %>"><%= category.category_09 %></a></li>
+          <% end %>
+          <% if category.category_10.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_10 %>"><%= category.category_10 %></a></li>
+          <% end %>
+          <% if category.category_11.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_11 %>"><%= category.category_11 %></a></li>
+          <% end %>
+          <% if category.category_12.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_12 %>"><%= category.category_12 %></a></li>
+          <% end %>
+          <% if category.category_13.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_13 %>"><%= category.category_13 %></a></li>
+          <% end %>
+          <% if category.category_14.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_14 %>"><%= category.category_14 %></a></li>
+          <% end %>
+          <% if category.category_15.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_15 %>"><%= category.category_15 %></a></li>
+          <% end %>
+          <% if category.category_16.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_16 %>"><%= category.category_16 %></a></li>
+          <% end %>
+          <% if category.category_17.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_17 %>"><%= category.category_17 %></a></li>
+          <% end %>
+          <% if category.category_18.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_18 %>"><%= category.category_18 %></a></li>
+          <% end %>
+          <% if category.category_19.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_19 %>"><%= category.category_19 %></a></li>
+          <% end %>
+          <% if category.category_20.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_20 %>"><%= category.category_20 %></a></li>
+          <% end %>
+          <% if category.category_21.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_21 %>"><%= category.category_21 %></a></li>
+          <% end %>
+          <% if category.category_22.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_22 %>"><%= category.category_22 %></a></li>
+          <% end %>
+          <% if category.category_23.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_23 %>"><%= category.category_23 %></a></li>
+          <% end %>
+          <% if category.category_24.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_24 %>"><%= category.category_24 %></a></li>
+          <% end %>
+          <% if category.category_25.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_25 %>"><%= category.category_25 %></a></li>
+          <% end %>
+          <% if category.category_26.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_26 %>"><%= category.category_26 %></a></li>
+          <% end %>
+          <% if category.category_27.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_27 %>"><%= category.category_27 %></a></li>
+          <% end %>
+          <% if category.category_28.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_28 %>"><%= category.category_28 %></a></li>
+          <% end %>
+          <% if category.category_29.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_29 %>"><%= category.category_29 %></a></li>
+          <% end %>
+          <% if category.category_30.present? %>
+            <li><a href="/promocodes/hashtag/<%= category.category_30 %>"><%= category.category_30 %></a></li>
+          <% end %>
+        </ul>
       </div>
 
       <% if current_user && current_user.admin %>
@@ -107,3 +110,26 @@
     <% end %>
   
 </div>
+
+<div class="back_btn_mobile">
+  <a href="/"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="Go bact to home" /></a>
+</div>
+
+<script type="text/javascript">
+  function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  }
+</script>

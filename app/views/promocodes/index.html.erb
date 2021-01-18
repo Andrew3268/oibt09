@@ -10,6 +10,11 @@
       
       <p>Don't pay full price! Save your money!</p>
       <h1><a href="/" data-turbolinks="false">HOTDEAL-FUL</a></h1>
+      <div class="search-index">
+        <%= form_for "",url: promocodes_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
+        <% end %> 
+      </div>   
       <%= render 'categories/list' %>
     </div>
 
