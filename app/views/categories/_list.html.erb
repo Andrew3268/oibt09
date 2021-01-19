@@ -1,39 +1,39 @@
-<div class="category-pc clearfix" data-turbolinks="false">
-  <ul>
-    <li><a href="/">Everything</a></li>
-    <% @categories.each do |cat| %>
-      <% if cat.category_01.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_01 %>"><%= cat.category_01 %>,</a></li>
-      <% end %>
-      <% if cat.category_02.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_02 %>"><%= cat.category_02 %>,</a></li>
-      <% end %>
-      <% if cat.category_03.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_03 %>"><%= cat.category_03 %>,</a></li>
-      <% end %>
-      <% if cat.category_04.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_04 %>"><%= cat.category_04 %>,</a></li>
-      <% end %>
-      <% if cat.category_05.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_05 %>"><%= cat.category_05 %>,</a></li>
-      <% end %>
-      <% if cat.category_06.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_06 %>"><%= cat.category_06 %>,</a></li>
-      <% end %>
-      <% if cat.category_07.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_07 %>"><%= cat.category_07 %>,</a></li>
-      <% end %>
-      <% if cat.category_08.present? %>
-        <li><a href="/promocodes/hashtag/<%= cat.category_08 %>"><%= cat.category_08 %></a></li>
-      <% end %>
-        <!-- <li><a href="/categories">+ More</a></li> -->
-    <% end %> 
-  </ul>
+<div class="category-pc clearfix cat-common" data-turbolinks="false">
+  <nav>
+    <ul>
+      <li><a href="/">Everything</a></li>
+      <% @categories.each do |cat| %>
+        <% if cat.category_01.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_01 %>"><%= cat.category_01 %></a></li>
+        <% end %>
+        <% if cat.category_02.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_02 %>"><%= cat.category_02 %></a></li>
+        <% end %>
+        <% if cat.category_03.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_03 %>"><%= cat.category_03 %></a></li>
+        <% end %>
+        <% if cat.category_04.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_04 %>"><%= cat.category_04 %></a></li>
+        <% end %>
+        <% if cat.category_05.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_05 %>"><%= cat.category_05 %></a></li>
+        <% end %>
+        <% if cat.category_06.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_06 %>"><%= cat.category_06 %></a></li>
+        <% end %>
+        <% if cat.category_07.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_07 %>"><%= cat.category_07 %></a></li>
+        <% end %>
+        <% if cat.category_08.present? %>
+          <li><a href="/promocodes/hashtag/<%= cat.category_08 %>"><%= cat.category_08 %></a></li>
+        <% end %>
+          <li><a href="/categories">+ More</a></li>
+      <% end %> 
+    </ul>
+  </nav>
 </div>
 
-
-
-<div class="category-mobile clearfix data-turbolinks="false"">
+<div class="category-mobile clearfix cat-common" data-turbolinks="false">
   <nav>
     <ul class="left">
       <li><a href="/">Everything</a></li>
@@ -65,7 +65,7 @@
       <% end %> 
     </ul>
     <ul class="right">
-      <!-- <li><a href="/categories">+ More</a></li> -->
+      <li><a href="/categories">+ More</a></li>
     </ul>
   </nav>
 </div>

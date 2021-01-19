@@ -24,7 +24,8 @@
 
 @media screen and (min-width:641px) and (max-width:1199px){
   .cat-wrap{width:96%;margin:20px 2% 0 2%;}
-  .cat-wrap .cat-box ul li a{width:25%;}
+  .cat-wrap .cat-box ul li a{width:25%;font-size:12px;}
   .back_btn_mobile{display:block;}
+  .cat-wrap .cat-box input{width:99.5%;}
 
 }

@@ -9,7 +9,11 @@
     <div class="visual">
       
       <p>Don't pay full price! Save your money!</p>
-      <h1><a href="/" data-turbolinks="false">HOTDEAL-FUL</a></h1>
+      <h1><a href="/" data-turbolinks="false">HOTDEAL-FUL</a>
+        <% if current_user && current_user.admin %>
+          <%= link_to 'New Promocode', new_promocode_path %>
+        <% end %>
+      </h1>
       <div class="search-index">
         <%= form_for "",url: promocodes_path, role: "search", method: :get do %>
           <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
@@ -21,7 +25,7 @@
     <% if current_user && current_user.admin %>
       <div class="index-amdin" data-turbolinks="false">
         <p>I am Admin!!!!!</p>
-        <%= link_to 'New Promocode', new_promocode_path %>
+        
         <%= link_to 'Categories', categories_path %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>

@@ -16,8 +16,7 @@ input, textarea, select{border:1px solid #ccc;-moz-appearance:none;appearance:no
 .clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
-body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight:300;font-family:'Open Sans', sans-serif;
-}
+body{margin:0;padding:0;font-size:15px;color:#3d3d3d;line-height:1.5;font-weight:300;font-family:'Open Sans', sans-serif;-webkit-scrollbar:none;}
 @media screen and (max-width:640px){
   body{font-size:13px;font-weight:400;}
 }
