@@ -94,7 +94,7 @@
               <% code_now = @promocode.code_wacode_price - promo_price %>
               <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
               <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
-              <p>Promo Code : <%= @promocode.code_spare_01 %></p>
+              <p>Code: <%= @promocode.code_spare_01 %></p>
             <% else %>
               <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
               <p>You can save: <%= number_to_currency(discount_price) %></p> 
@@ -118,7 +118,7 @@
                       <% code_now = @promocode.code_wacode_price - promo_price %>
                       <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
                       <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
-                      <p>Visit our website and get the promotion code</p>
+                      <p>Code: <%= @promocode.code_spare_01 %></p>
                       <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p>
                     <% else %>
                       <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
