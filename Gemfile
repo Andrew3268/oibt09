@@ -9,6 +9,7 @@ gem 'pagy'
 gem 'friendly_id'
 gem 'jquery-rails'
 gem 'meta-tags'
+gem 'impressionist'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'

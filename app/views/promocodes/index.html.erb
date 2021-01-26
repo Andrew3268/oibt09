@@ -35,7 +35,8 @@
       <% @promocodes.each do |promocode| %>
         <div class="card">
           <div class="image-box">
-            <a href="/promocodes/<%= promocode.id %>" data-turbolinks="false"><img src="<%= promocode.code_image %>" alt="<%= promocode.code_title %>" title="<%= promocode.code_title %>"></a>
+            <!-- <a href="/promocodes/<%= promocode.id %>" data-turbolinks="false"><img src="<%= promocode.code_image %>" alt="<%= promocode.code_title %>" title="<%= promocode.code_title %>"></a> -->
+            <%= link_to image_tag(promocode.code_image), promocode %>
           </div>
           <div class="inner">
             <p class="line-break-01" data-turbolinks="false"><%= link_to promocode.code_title, promocode%></p>
@@ -57,6 +58,10 @@
             <% hotdeal_pct = 0 %>
             <% hotdeal_pct =  (promocode.code_wacode_price - promocode.code_icode_price) / promocode.code_wacode_price * 100 %>
             <div class="pct"><p><%= number_to_percentage(hotdeal_pct, precision: 0) %> off</p></div>
+          <% end %>
+          <% if current_user && current_user.admin %>
+            <span class="view">view:<%= promocode.impressionist_count %></span>
+            <span class="delete"><%= link_to 'Destroy', promocode, method: :delete, data: { confirm: 'Are you sure?' } %></span>
           <% end %>
         </div>
       <% end %>

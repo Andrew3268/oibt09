@@ -37,6 +37,7 @@ class PromocodesController < ApplicationController
   # GET /promocodes/1
   # GET /promocodes/1.json
   def show
+    impressionist(@promocode)
     set_meta_tags title: @promocode.code_title,
                   site: @promocode.code_title,
                   revierse: true,

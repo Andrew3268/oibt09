@@ -1,4 +1,6 @@
 class Promocode < ApplicationRecord
+  is_impressionable
+  
   extend FriendlyId
   friendly_id :code_title, use: :slugged
 
