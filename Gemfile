@@ -10,6 +10,7 @@ gem 'friendly_id'
 gem 'jquery-rails'
 gem 'meta-tags'
 gem 'impressionist'
+gem 'sitemap_generator'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
