@@ -111,7 +111,7 @@
             <div class="col-md-12">
                <span class="js-copytext"> 
                 <div class="sharing">
-                  <span id="facebook_ctn">
+                  <span>
                     <p>Available at Amazon NOW!!</p>
                     <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
 
@@ -127,9 +127,9 @@
                       <p>You can save: <%= number_to_currency(discount_price) %></p> 
                       <!-- <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p> -->
                     <% end %>
-
-                    <p><%= @promocode.code_link %></p>
                     <p>If you want to find more coupons visit "hotdealful.com"</p>
+                    <p><%= @promocode.code_link %></p>
+                    
                     <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #coupons</p>
                   </span>
                 </div>
