@@ -3,21 +3,28 @@
 
   <div class="wrap">
 
+
     <div class="visual">
       <p>Don't pay full price! Save your money!</p>
-      <h1>HOTDEAL-FUL</h1>
+      <h1><a href="/" data-turbolinks="false">HOTDEAL-FUL</a>
+        <% if current_user && current_user.admin %>
+          <%= link_to 'New Promocode', new_promocode_path %>
+        <% end %>
+      </h1>
       <div class="search-index">
         <%= form_for "",url: promocodes_path, role: "search", method: :get do %>
           <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
         <% end %> 
       </div>   
       <%= render 'categories/list' %>
-      <div class="where-hashtag">
+
+       <div class="where-hashtag">
         <% if params[:name].present? %>
           <p><span class="hashtag-through">#<%= params[:name] %></span></p>
         <% end %>
       </div>
     </div>
+
 
     <div class="product-border clearfix">
       <% @promocodes.each do |promocode| %>

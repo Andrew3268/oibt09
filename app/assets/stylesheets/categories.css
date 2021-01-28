@@ -3,6 +3,7 @@
 .cat-wrap .cat-box ul{text-align:center;}
 .cat-wrap .cat-box ul li{}
 .cat-wrap .cat-box ul li a{float:left;width:23%;display:block;border:1px solid #ccc;padding:20px 10px;margin-top:-1px;margin-left:-1px;font-size:14px;}
+.cat-wrap .cat-box ul li a em{margin-right:5px;display:none;}
 .cat-wrap .cat-box input{padding:10px;width:45.5%;margin-bottom:10px;border-radius:10px;}
 .cat-wrap .admin{margin-top:5px;}
 .cat-wrap .admin a{margin:0 5px;}
@@ -17,6 +18,7 @@
   .cat-wrap .cat-box ul{text-align:left;margin-left:5%;}
   .cat-wrap .cat-box ul li{}
   .cat-wrap .cat-box ul li a{float:none;width:100%;display:block;border:none;padding:8px 0;font-size:15px;font-weight:500;}
+  .cat-wrap .cat-box ul li a em{display:inline-block;}
   .cat-wrap .cat-box input{padding:10px;width:100%;}
   .back_btn_mobile{display:block;}
   
