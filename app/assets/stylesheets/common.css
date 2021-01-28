@@ -185,12 +185,13 @@ a.set_reset_m{display:none;}
   
 }
 @media screen and (min-width:641px) and (max-width:1199px){
+  .search-wrapping{width:100%;margin:0;}
   .set_banner{display:none;height:566.94px;}
   .set_banner h2{font-size:17px;}
   .field span.label{width:33%;}
   .field input, .field select{width:64%;}
   .set_search{width:102%;}
-  .set_search_box{float:none;width:100%;margin:0 0 20px 0;}
+  .set_search_box{float:none;width:100%;margin:20px 0;}
   .set_search_box button.accordion{width:50%;}
   .option_box p{font-size:12px;}
   .text-center{padding-top:0;}
@@ -219,7 +220,8 @@ a.set_reset_m{display:none;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
-  .search-pct{float:left;width:70%;}
+  .search-pct{float:none;width:100%;margin:0;}
+  .search-pct .tg{margin:0;}
   .search-pct .tg tr th,
   .search-pct .tg tr td{font-size:13px;}
   .search-pct .tg tr td a:hover{color:#000;}
