@@ -1,4 +1,5 @@
 <div class="top-box"></div>
+<% if current_user && current_user.admin %>
 <div class="marketing-wrapping">
   <div class="wrap">
     <div class="fb-group">
@@ -52,5 +53,5 @@
       <% end %>
     </div>
   </div>
-
 </div>
+<% end %>

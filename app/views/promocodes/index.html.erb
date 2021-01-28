@@ -5,7 +5,6 @@
   <div class="wrap">
 
     <div class="visual">
-      
       <p>Don't pay full price! Save your money!</p>
       <h1><a href="/" data-turbolinks="false">HOTDEAL-FUL</a>
         <% if current_user && current_user.admin %>
@@ -18,7 +17,7 @@
         <% end %> 
       </div>   
       <%= render 'categories/list' %>
-    </div>
+    </div><!--./visual-->
 
     <div class="find-coupon-box">
       <%= render 'promocodes/find_coupon' %>
@@ -33,6 +32,11 @@
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
+
+    <div class="pick-hash">
+      <a class=".hashtag-through" href="/promocodes/hashtag/50_percent">#50_Percent_Or_More</a>
+      <a href="/promocodes/hashtag/under_10">#Under_$10</a>
+    </div>
 
     <div class="product-border clearfix">
       <% @promocodes.each do |promocode| %>
