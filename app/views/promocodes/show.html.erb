@@ -105,7 +105,9 @@
             <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #coupons</p>
           </span>
         </div>
+        
         <hr>
+
         <div class="twitter-container">
           <div class="row">
             <div class="col-md-12">
@@ -121,11 +123,10 @@
                       <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
                       <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
                       <p>Code: <%= @promocode.code_spare_01 %></p>
-                      <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p>
+                      <!-- <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p> -->
                     <% else %>
                       <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
                       <p>You can save: <%= number_to_currency(discount_price) %></p> 
-                      <!-- <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p> -->
                     <% end %>
                     <p>If you want to find more coupons visit "hotdealful.com"</p>
                     <p><%= @promocode.code_link %></p>
