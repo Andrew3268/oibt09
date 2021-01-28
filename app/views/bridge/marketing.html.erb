@@ -1,0 +1,56 @@
+<div class="top-box"></div>
+<div class="marketing-wrapping">
+  <div class="wrap">
+    <div class="fb-group">
+      <% @promocodes.each do |promocode| %>
+        <div class="marketing-box">
+          <p><%= promocode.code_title %></p>
+          <p>Was: <%= number_to_currency(promocode.code_wacode_price) %></p>
+
+          <% if promocode.code_spare_01.present? %>
+            <% promo_price = 0 %>
+            <% promo_price = (promocode.code_pct.to_f / 100) * promocode.code_wacode_price.to_f %>
+            <% code_now = 0%>
+            <% code_now = promocode.code_wacode_price - promo_price %>
+            <p>Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(promocode.code_pct, precision: 0) %> off)</p>
+            
+            <p>Code: <%= promocode.code_spare_01 %></p>
+          <% else %>
+            <p>Now: <%= number_to_currency(promocode.code_icode_price) %> | (<%= number_to_percentage(promocode.code_pct, precision: 0) %> off)</p>
+            
+          <% end %>
+
+          Link: <a target="_blank" href="<%= promocode.code_link %>"><%= promocode.code_link %></a>
+        </div>
+        <br>
+      <% end %>
+    </div>
+
+    <div class="kor-site">
+      <% @promocodes.each do |promocode| %>
+        <div class="marketing-box">
+          <p><%= promocode.code_title %></p>
+          <p>Was: <%= number_to_currency(promocode.code_wacode_price) %></p>
+
+          <% if promocode.code_spare_01.present? %>
+            <% promo_price = 0 %>
+            <% promo_price = (promocode.code_pct.to_f / 100) * promocode.code_wacode_price.to_f %>
+            <% code_now = 0%>
+            <% code_now = promocode.code_wacode_price - promo_price %>
+            <p>Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(promocode.code_pct, precision: 0) %> off)</p>
+            
+            <p>Code: <%= promocode.code_spare_01 %></p>
+          <% else %>
+            <p>Now: <%= number_to_currency(promocode.code_icode_price) %> | (<%= number_to_percentage(promocode.code_pct, precision: 0) %> off)</p>
+            
+          <% end %>
+
+          <!-- <a target="_blank" href="<%= promocode.code_link %>"><%= promocode.code_link %></a> -->
+          <a target="_blank" href="/promocodes/<%= promocode.id %>">핫딜 확인하기</a>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </div>
+
+</div>
