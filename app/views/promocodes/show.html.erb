@@ -68,7 +68,7 @@
 
       <!-- Button Section -->
       <div class="btn">
-        <a class="amz_btn" target="_blank" href="<%= @promocode.code_link %>">Check it out on Amazon</a>
+        <a class="amz_btn" target="_blank" href="<%= @promocode.code_link %>">Check it out at Amazon</a>
 
         <% if current_user && current_user.admin %>
           <div class="admin">
@@ -86,7 +86,7 @@
       <% if current_user && current_user.admin %>
         <div class="sharing">
           <span id="facebook_ctn">
-            <p>Available on Amazon NOW!!</p>
+            <p>Available at Amazon NOW!!</p>
             <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
 
             <% if @promocode.code_spare_01.present? %>
@@ -110,7 +110,7 @@
                <span class="js-copytext"> 
                 <div class="sharing">
                   <span id="facebook_ctn">
-                    <p>Available on Amazon NOW!!</p>
+                    <p>Available at Amazon NOW!!</p>
                     <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
 
                     <% if @promocode.code_spare_01.present? %>

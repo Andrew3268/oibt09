@@ -1,6 +1,4 @@
-<!-- <div class="header">
-  <%= render 'promocodes/header' %>
-</div> -->
+
 <div class="top-box"></div>
 <div class="index-wrap">
 
@@ -16,10 +14,14 @@
       </h1>
       <div class="search-index">
         <%= form_for "",url: promocodes_path, role: "search", method: :get do %>
-          <%= text_field_tag :search, @search_term, placeholder: "Search..." %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search today's hot deal..." %>
         <% end %> 
       </div>   
       <%= render 'categories/list' %>
+    </div>
+
+    <div class="find-coupon-box">
+      <%= render 'promocodes/find_coupon' %>
     </div>
 
     <% if current_user && current_user.admin %>
@@ -27,6 +29,7 @@
         <p>I am Admin!!!!!</p>
         
         <%= link_to 'Categories', categories_path %>
+        <a href="/bridge/marketing">Marketing</a>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       </div>
     <% end %>

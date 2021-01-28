@@ -1,0 +1,393 @@
+<div class="top-box"></div>
+<div class="search-wrapping clearfix">
+  <div class="wrap">
+    <div class="set_search_box clearfix">
+      <h2>Amazon Deal Finder 3.0</h2>
+
+      <button class="accordion">Select Category</button>
+      <%= render 'bridge/search_cat' %>
+
+
+      <div class="feild_wrap">
+        <div class="keyword_box clearfix">
+          <p>Keyword</p>
+          <input type="text" class="keyword" placeholder="Search Keyword" value="">
+        </div>
+
+        <div class="keyword_box clearfix">
+          <p>Brand</p>
+          <input type="text" class="brand" placeholder="Brand Keyword" value="">
+        </div>
+
+        <div class="pricing_box clearfix">
+          <div class="price min">
+            <p>Min Price</p>
+            <input type="text" class="minprice" placeholder="Min Price" value="">
+          </div>
+
+          <div class="price max">
+            <p>Max Price</p>
+            <input type="text" class="maxprice" placeholder="Max Price" value="">
+          </div>
+        </div>
+
+
+        <div class="pct_box  clearfix">
+          <div class="minpct pct">
+            <p>Min Pct Off</p>
+            <div class="select_pct">
+              <select name="minpct">
+                <!-- <option value="">Min Pct Off</option> -->
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="20">20%</option>
+                <option value="30">30%</option>
+                <option value="40">40%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="70">70%</option>
+                <option value="80">80%</option>
+                <option value="90">90%</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="maxpct pct">
+            <p>Max Pct Off</p>
+            <select name="maxpct">
+              <!-- <option value="">Max Pct Off</option> -->
+              <option value="0">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="20">20%</option>
+              <option value="30">30%</option>
+              <option value="40">40%</option>
+              <option value="50">50%</option>
+              <option value="60">60%</option>
+              <option value="70">70%</option>
+              <option value="80">80%</option>
+              <option value="90">90%</option>
+            </select>
+          </div>
+        </div>
+
+      
+        <div class="field time pct_none">
+          <span class="label">Search Option</span>
+          <select name="time">
+            <option value="">Select</option>
+            <option value="custom">Set Discount Range</option>
+          </select>
+
+          <div class="custom-time disable">
+            <div class="month">
+              <select name="month">
+                <option value="">Min Pct Off</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="20">20%</option>
+                <option value="30">30%</option>
+                <option value="40">40%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="70">70%</option>
+                <option value="80">80%</option>
+                <option value="90">90%</option>
+              </select>
+            </div>
+
+            <div class="max">
+              <select name="max">
+                <option value="">Max Pct Off</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="20">20%</option>
+                <option value="30">30%</option>
+                <option value="40">40%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="70">70%</option>
+                <option value="80">80%</option>
+                <option value="90">90%</option>
+              </select>
+            </div>
+            
+          </div>
+        </div>
+
+
+      </div><!--feild_wrap-->
+      
+
+      <div class="option_wrap clearfix">
+        <div class="option_box op_wrap">
+          <p>w/ Amazon Prime</p>
+          <div class="prime-type on_off clearfix">
+            <input id="off" name="prime-type" type="radio" value="" checked>
+            <label class="first swich_off" for="off">OFF</label>
+
+            <!-- <input id="prime" name="prime-type" type="radio" value="1582276412"> -->
+            <input id="prime" name="prime-type" type="radio" value="p_85:2470955011">
+            <label for="prime" class="swich_on">ON</label>
+          </div>
+        </div>
+
+        <div class="option_box op_wrap">  
+          <p>w/ Free Shipping</p>
+          <div class="shipping-type on_off clearfix">
+            <input id="shipping_off" name="shipping-type" type="radio" value="" checked>
+            <label class="first swich_off" for="shipping_off">OFF</label>
+
+            <input id="shipping" name="shipping-type" type="radio" value="p_76:2661625011">
+            <label for="shipping" class="swich_on">ON</label>
+          </div>
+        </div>
+
+        <div class="option_box op_wrap">  
+          <p>w/ Coupons</p>
+          <div class="coupon-type on_off clearfix">
+            <input id="coupon_off" name="coupon-type" type="radio" value="" checked>
+            <label class="first swich_off" for="coupon_off">OFF</label>
+
+            <input id="coupon" name="coupon-type" type="radio" value="2231352011">
+            <label for="coupon" class="swich_on">ON</label>
+          </div>
+        </div>
+
+        <div class="option_box op_wrap">  
+          <p>w/ Get it by tomorrow</p>
+          <div class="fast-type on_off clearfix">
+            <input id="fast_off" name="fast-type" type="radio" value="" checked>
+            <label class="first swich_off" for="fast_off">OFF</label>
+
+            <input id="fast" name="fast-type" type="radio" value="p_90%3A8308921011&dc&crid=12AG8FB7CS5F2&qid=1583144920&rnid=8308919011">
+            <label for="fast" class="swich_on">ON</label>
+          </div>
+        </div>
+
+        <div class="option_box op_wrap">  
+          <p>w/ International Shipping</p>
+          <div class="oversea-type on_off clearfix">
+            <input id="oversea_off" name="oversea-type" type="radio" value="" checked>
+            <label class="first swich_off" for="oversea_off">OFF</label>
+
+            <input id="oversea" name="oversea-type" type="radio" value="p_n_shipping_option-bin%3A3242350011&dc&qid=1582884089&rnid=2944662011">
+            <label for="oversea" class="swich_on">ON</label>
+          </div>
+        </div>
+
+        <div class="option_box op_wrap">  
+          <p>w/ Subscribe & Save</p>
+          <div class="subscribe-type on_off clearfix">
+            <input id="subscribe_off" name="subscribe-type" type="radio" value="" checked>
+            <label class="first swich_off" for="subscribe_off">OFF</label>
+
+            <input id="subscribe" name="subscribe-type" type="radio" value="p_n_is_sns_available%3A2617006011&dc&qid=1582885888&rnid=2617005011">
+            <label for="subscribe" class="swich_on">ON</label>
+          </div>
+        </div>
+
+        
+        <a class="set_reset_m" href="/bridge/search">Reset</a>
+
+      </div><!--option_wrap-->
+
+
+      <div class="text-center">
+        <a class="set_reset" href="/bridge/search">Reset</a>
+        <button class="search">Find Deals</button>
+      </div>
+    </div><!--set_search_box-->
+  </div>
+
+  <!-- search-pct ################### -->
+  <div class="search-pct clearfix">
+    <table class="tg">
+       <%= render 'bridge/search_pct' %>
+    </table>
+  </div>
+
+<div class="back_btn_mobile">
+  <a href="/"><img class="back_btn_m" src="<%=asset_path 'back_btn.png' %>" alt="Go bact to home" /></a>
+</div>
+
+<script type="text/javascript">
+  //Search on Amazon[quick search]//
+  function isMobile(){
+  var UserAgent = navigator.userAgent;
+
+  if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+    {
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  if(isMobile()){
+      //For Mobile
+      $(document).ready(function(){
+      var rootURL = "https://www.amazon.com/s?i=aps";
+
+      $("select[name='time']").change(function(){
+        if ( $(this).val() === "custom" ){
+          $(".custom-time").removeClass("disable");
+        } else {
+          $(".custom-time").addClass("disable");
+        }
+      });
+      
+      $(".search").on("click", function(){
+        var postType = $("input:radio[name='post-type']:checked").val();
+        var primeType = $("input:radio[name='prime-type']:checked").val();
+        var couponType = $("input:radio[name='coupon-type']:checked").val();
+        var shippingType = $("input:radio[name='shipping-type']:checked").val();
+        var fastType = $("input:radio[name='fast-type']:checked").val();
+        var overseaType = $("input:radio[name='oversea-type']:checked").val();
+        var subscribeType = $("input:radio[name='subscribe-type']:checked").val();
+        var keyWord = $(".keyword").val();
+        var brandWord = $(".brand").val();
+        var minPrice = $(".minprice").val();
+        var maxPrice = $(".maxprice").val();
+        var timeType = $(".time select").val();
+        var postMonth = $("select[name='month']").val();
+        var postMax = $("select[name='max']").val();
+        var minPct = $("select[name='minpct']").val();
+        var maxPct = $("select[name='maxpct']").val();
+        // var postYear = $(".year").val();
+        
+        var key  = (keyWord === "") ? "" : "&field-keywords=" + keyWord;
+        var brand  = (brandWord === "") ? "" : "&rh=p_89%3A" + brandWord;
+        var mip  = (minPrice === "") ? "" : "&rh=p_74%3A" + minPrice+"00-";
+        var mxp  = (maxPrice === "") ? "" : maxPrice+"00";
+        var type = (postType === "") ? "" : "&i=" + postType;
+        var prime = (primeType === "") ? "" : "&rh=" + primeType;
+        var coupon = (couponType === "") ? "" : "&srs=" + couponType;
+        var shipping = (shippingType === "") ? "" : "&rh=" + shippingType;
+        var fast = (fastType === "") ? "" : "&rh=" + fastType;
+        var oversea = (overseaType === "") ? "" : "&rh=" + overseaType;
+        var subscribe = (subscribeType === "") ? "" : "&rh=" + subscribeType;
+        var time = (timeType === "" || timeType === "custom") ? "": timeType + "/";
+        var month = (postMonth === "") ? "" : postMonth+"-";
+        var max = (postMax === "") ? "" : postMax;
+        var mipct = (minPct === "") ? "" : "&rh=p_75%3A"+ minPct+ "-";
+        var mxpct = (maxPct === "") ? "" : maxPct;
+        // var year = (postYear === "") ? "" : postYear+"/";
+        var postTime;
+        
+        if( timeType ==="custom" ){
+          if( month !== "" && max !==""){
+            postTime = "&rh=p_75%3A"+month+max;
+          } else {
+            postTime = "";
+          }
+        } else {
+          
+          postTime = time;
+        }
+        
+        var query = rootURL + type + mip + mxp + mipct + mxpct + prime + coupon + shipping + fast + oversea + subscribe + postTime + key + brand + "&tag=oigbt-20";
+
+        window.open(query, '_blank');
+        
+      });
+    });
+
+
+  }else{
+
+      //For PC
+      $(document).ready(function(){
+      var rootURL = "https://www.amazon.com/s?k=";
+
+      $("select[name='time']").change(function(){
+        if ( $(this).val() === "custom" ){
+          $(".custom-time").removeClass("disable");
+        } else {
+          $(".custom-time").addClass("disable");
+        }
+      });
+      
+      $(".search").on("click", function(){
+        var postType = $("input:radio[name='post-type']:checked").val();
+        var primeType = $("input:radio[name='prime-type']:checked").val();
+        var couponType = $("input:radio[name='coupon-type']:checked").val();
+        var shippingType = $("input:radio[name='shipping-type']:checked").val();
+        var fastType = $("input:radio[name='fast-type']:checked").val();
+        var overseaType = $("input:radio[name='oversea-type']:checked").val();
+        var subscribeType = $("input:radio[name='subscribe-type']:checked").val();
+        var keyWord = $(".keyword").val();
+        var brandWord = $(".brand").val();
+        var minPrice = $(".minprice").val();
+        var maxPrice = $(".maxprice").val();
+        var timeType = $(".time select").val();
+        var postMonth = $("select[name='month']").val();
+        var postMax = $("select[name='max']").val();
+        var minPct = $("select[name='minpct']").val();
+        var maxPct = $("select[name='maxpct']").val();
+        // var postYear = $(".year").val();
+        
+        var key  = (keyWord === "") ? "" : keyWord;
+        var brand  = (brandWord === "") ? "" : "&rh=p_89%3A" + brandWord;
+        var mip  = (minPrice === "") ? "" : "&rh=p_74%3A" + minPrice+"00-";
+        var mxp  = (maxPrice === "") ? "" : maxPrice+"00";
+        var type = (postType === "") ? "" : "&i=" + postType;
+        var prime = (primeType === "") ? "" : "&rh=p_85%3A1&dc&qid=" + primeType + "&ref=sr_nr_p_85_1";
+        var coupon = (couponType === "") ? "" : "&srs=" + couponType;
+        var shipping = (shippingType === "") ? "" : "&rh=" + shippingType;
+        var fast = (fastType === "") ? "" : "&rh=" + fastType;
+        var oversea = (overseaType === "") ? "" : "&rh=" + overseaType;
+        var subscribe = (subscribeType === "") ? "" : "&rh=" + subscribeType;
+        var time = (timeType === "" || timeType === "custom") ? "": timeType + "/";
+        var month = (postMonth === "") ? "" : postMonth+"-";
+        var max = (postMax === "") ? "" : postMax;
+        var mipct = (minPct === "") ? "" : "&rh=p_75%3A"+ minPct+ "-";
+        var mxpct = (maxPct === "") ? "" : maxPct;
+        // var year = (postYear === "") ? "" : postYear+"/";
+        var postTime;
+        
+        if( timeType ==="custom" ){
+          if( month !== "" && max !==""){
+            postTime = "&rh=p_75%3A"+month+max;
+          } else {
+            postTime = "";
+          }
+        } else {
+          
+          postTime = time;
+        }
+        
+        var query = rootURL+ key + mip + mxp + mipct + mxpct + type + prime + coupon + shipping + fast + oversea + subscribe + postTime + brand + "&tag=oigbt-20";
+
+        window.open(query, '_blank');
+        
+      });
+    });
+
+  }
+  //End//
+
+  //See Categories on Amazon[quick search]//
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  //End//
+</script>
+
+
+
+
+
+
