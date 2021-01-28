@@ -7,7 +7,7 @@ class PromocodesController < ApplicationController
   def index
     @pagy, @promocodes = pagy(Promocode.all.order("created_at DESC"), items: 80)
     set_meta_tags title: 'The best Deals, Coupons, Promocodes on Amazon',
-                  site: 'hotdeal-ful',
+                  site: 'hotdealful',
                   revierse: true,
                   description: 'Find the best deals, coupons, promo codes on Amazon. Do not pay full price!!, save your money with us.',
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
@@ -39,7 +39,7 @@ class PromocodesController < ApplicationController
   def show
     impressionist(@promocode)
     set_meta_tags title: @promocode.code_title,
-                  site: @promocode.code_title,
+                  site: 'hotdealful',
                   revierse: true,
                   description: @promocode.code_title,
                   keywords: 'amazondeals, hotdeals, promotion code, coupons ',
