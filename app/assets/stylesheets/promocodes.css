@@ -66,11 +66,11 @@
 .show-wrap button, .macro-btn .facebook span{background:#68d391;color:#fff;padding:5px;font-size:13px;}
 .show-wrap .macro-btn a.back-btn{background:#68d391;color:#fff;padding:5px;font-size:13px;color:#fff;display:inline-block;}
 .show-wrap .sharing{width:45%;padding:10px;font-size:10px;}
-.show-wrap .sharing p{}
+/*.show-wrap .sharing p{}*/
 .show-wrap .sharing span{display:block;}
-.show-wrap .sharing p.was_price{}
-.show-wrap .sharing span.is_price{}
-.show-wrap .sharing
+/*.show-wrap .sharing p.was_price{}
+.show-wrap .sharing span.is_price{}*/
+
 
 
 @media screen and (max-width:640px){
