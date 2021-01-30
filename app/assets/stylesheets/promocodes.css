@@ -133,26 +133,35 @@
 
 /* Index Find Coupon */
 .find-coupon{text-align:center;background:#ffea92;border-radius:20px;margin-bottom:20px;}
+.find-coupon .couponbox-full{float:left;width:80%;margin:2% 10%;background:rgba(0,0,0,0.2);color:#ffea92;padding:1.2em 2em;border-radius:20px;font-weight:bold;text-align:left;}
+.find-coupon .couponbox-full p{font-size:30px;}
 .find-coupon .couponbox-left{float:left;width:45%;margin:2.5%;background:rgba(0,0,0,0.2);color:#ffea92;padding:1.2em 2em;border-radius:20px;font-weight:bold;text-align:left;}
 .find-coupon .couponbox-left p{font-size:30px;}
 .find-coupon .couponbox-left span{display:block;}
-.find-coupon .couponbox-right{float:left;width:45%;margin:2.5%;}
+.find-coupon .couponbox-left span a{background:#ffea92;color:rgba(0,0,0,0.2);padding:10px 20px;border-radius:10px;}
+.find-coupon .couponbox-right{float:left;width:45%;margin:39px 2.5% 2.5% 2.5%;}
 .find-coupon .find-keyword{}
-.find-coupon .find-keyword input{width:80%;padding:15px;border-radius:20px;border:none;}
+.find-coupon .find-keyword input{width:80%;padding:20px;border-radius:20px;border:none;}
 .find-coupon .find-keyword input::placeholder{color:#ccc;}
 .find-coupon .index-coupon{visibility:hidden;}
 .find-coupon .index-coupon label{width:1%;font-size:0.5px;margin:0;}
 .find-coupon .find-btn{}
-.find-coupon .find-btn .btn-comm{background:#68d391;border-radius:20px;color:#fff;display:block;width:80%;margin:1% 10%;font-size:14px;}
+.find-coupon .find-btn .btn-comm{background:#68d391;border-radius:20px;color:#fff;display:block;width:80%;margin:0 10% 0 10%;font-size:14px;padding:20px;}
 .find-coupon .find-btn button{padding:10px;}
 .find-coupon .find-btn a{padding:6px;font-size:14px;}
 
 @media screen and (max-width:640px){
-  .find-coupon{padding:10px 0 20px 0;margin:20px 0;}
-  .find-coupon .couponbox-left{float:none;width:80%;margin:5% 10%;}
+  .search-wrapping .find-coupon{padding:10px 0;}
+  .find-coupon{padding:1px 0 20px 0;margin:20px 0;}
+  .find-coupon .couponbox-full{width:90%;margin:2% 5%;}
+  .find-coupon .couponbox-full p{font-size:22px;}
+  .find-coupon .couponbox-left{float:none;width:90%;margin:5%;}
   .find-coupon .couponbox-left p{font-size:22px;}
   .find-coupon .couponbox-left span{display:block;}
+  .find-coupon .couponbox-left span a{display:block;width:38%;}
   .find-coupon .couponbox-right{float:none;width:100%;margin:0;} 
+  .find-coupon .find-keyword input{width:90%;}
+  .find-coupon .find-btn .btn-comm{width:90%;margin:0 5% 0 5%;}
   .find-coupon .find-btn a{padding:7px;}
 }
 

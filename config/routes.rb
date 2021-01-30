@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'bridge/marketing'
   get 'bridge/search'
+  get 'bridge/under_10'
+  get 'bridge/more_50'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
