@@ -1,8 +1,9 @@
 /* Index Pgae */
 .top-box{background:#68d391;height:15px;}
 .index-wrap{margin-top:10px;}
+.index-amdin{float:right;}
 .index-amdin a{background:#68d391;color:#fff;padding:5px;}
-.index-amdin p{margin-bottom:5px;}
+.index-amdin p{margin-bottom:5px;display:inline-block;}
 .product-border{}
 .visual{margin-bottom:30px;}
 .visual h1{font-size:35px;font-weight:900;margin-top:-10px;}
@@ -10,7 +11,7 @@
 .visual .search-index input{padding:10px;width:40%;border-radius:20px;}
 .visual .search-index input::placeholder{color:#ccc;}
 .pick-hash{}
-.pick-hash a{font-size:22px;display:inline;background-image:linear-gradient(180deg, transparent 0, transparent 60%, #fcf113 35%, #fcf113 100%, transparent 57%, transparent 100%);background-repeat:no-repeat;transition:background-size 0.4s ease;background-size:54% 100%;margin-right:10px;}
+.pick-hash a{font-size:20px;background:#ffea92;padding:5px 20px;border-radius:15px;color:#68d391;font-weight:bold;}
 .product-border .card{float:left;width:23%;height:300px;margin:1% 1% 3% 1%;position:relative;box-shadow:0 0 5px rgba(0,0,0,0.15);border-radius:20px;}
 .product-border .card .pct{position:absolute;bottom:70px;left:10px;color:#fff;border-radius:10px;background:#68d391;}
 .product-border .card .pct p{width:70px;height:20px;display:table-cell;vertical-align:middle;text-align:center;padding:5px;}
@@ -30,8 +31,8 @@
   .product-border .card .image-box{width:100%;margin:0;}
   .product-border .card .image-box img{width:70%;height:70%;}
   .visual .search-index input{padding:10px;width:100%;}
-  .pick-hash{margin:0 3%;}
-  .pick-hash a{font-size:15px;}
+  .pick-hash{margin:0 1% 20px 1%;}
+  .pick-hash a{font-size:15px;padding:10px 20px;}
 
 }
 
@@ -69,6 +70,7 @@
 .show-wrap .sharing span{display:block;}
 .show-wrap .sharing p.was_price{}
 .show-wrap .sharing span.is_price{}
+.show-wrap .sharing
 
 
 @media screen and (max-width:640px){
@@ -141,12 +143,12 @@
 .find-coupon .couponbox-left span a{background:#ffea92;color:rgba(0,0,0,0.2);padding:10px 20px;border-radius:10px;}
 .find-coupon .couponbox-right{float:left;width:45%;margin:39px 2.5% 2.5% 2.5%;}
 .find-coupon .find-keyword{}
-.find-coupon .find-keyword input{width:80%;padding:20px;border-radius:20px;border:none;}
+.find-coupon .find-keyword input{width:100%;padding:20px;border-radius:20px;border:none;}
 .find-coupon .find-keyword input::placeholder{color:#ccc;}
 .find-coupon .index-coupon{visibility:hidden;}
 .find-coupon .index-coupon label{width:1%;font-size:0.5px;margin:0;}
 .find-coupon .find-btn{}
-.find-coupon .find-btn .btn-comm{background:#68d391;border-radius:20px;color:#fff;display:block;width:80%;margin:0 10% 0 10%;font-size:14px;padding:20px;}
+.find-coupon .find-btn .btn-comm{background:#68d391;border-radius:20px;color:#fff;display:block;width:100%;font-size:14px;padding:20px;}
 .find-coupon .find-btn button{padding:10px;}
 .find-coupon .find-btn a{padding:6px;font-size:14px;}
 
@@ -168,6 +170,10 @@
 @media screen and (min-width:641px) and (max-width:1199px){
   .find-coupon{padding:10px 0;margin:20px 0;}
   .find-coupon .couponbox-left p{font-size:19px;}
+  .find-coupon .couponbox-right{margin-top:30px;}
+  .find-coupon .find-keyword input{width:100%;}
+  .find-coupon .find-btn .btn-comm{width:100%;margin:0;}
+  .find-coupon .couponbox-left span a{padding:3px 20px;}
 }
 
 

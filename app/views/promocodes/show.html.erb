@@ -84,6 +84,20 @@
 
       <!-- SNS Sharing Section -->
       <% if current_user && current_user.admin %>
+       <div class="sharing">
+        <p>Available this now at Amazon.com for 
+          <% if @promocode.code_spare_01.present? %>
+            <% code_now = 0 %>
+            <% code_now = @promocode.code_wacode_price - promo_price %>
+            <%= number_to_currency(code_now) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(@promocode.code_pct, precision: 0) %> off by PROMO CCODE:<%= @promocode.code_spare_01 %>]
+          <% else %>
+             <%= number_to_currency(@promocode.code_icode_price) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(hotdeal_pct, precision: 0) %> off ]
+          <% end %>
+          , shipping is free w/Prime or on $25+
+        </p>
+       </div>
+
+
         <div class="sharing">
           <span id="facebook_ctn">
             <p>Available at Amazon NOW!!</p>
@@ -99,7 +113,7 @@
               <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
               <p>You can save: <%= number_to_currency(discount_price) %></p> 
             <% end %>
-
+            <p>Shipping is free w/Prime or on $25+</p>
             <p><%= @promocode.code_link %></p>
             <p>If you want to find more coupons visit "hotdealful.com"</p>
             <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #coupons</p>
@@ -128,6 +142,7 @@
                       <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</span>
                       <p>You can save: <%= number_to_currency(discount_price) %></p> 
                     <% end %>
+                    <p>Shipping is free w/Prime or on $25+</p>
                     <p>If you want to find more coupons visit "hotdealful.com"</p>
                     <p><%= @promocode.code_link %></p>
                     
