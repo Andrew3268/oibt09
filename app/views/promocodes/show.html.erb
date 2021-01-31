@@ -89,12 +89,12 @@
           <% if @promocode.code_spare_01.present? %>
             <% code_now = 0 %>
             <% code_now = @promocode.code_wacode_price - promo_price %>
-            <%= number_to_currency(code_now) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(@promocode.code_pct, precision: 0) %> off by PROMO CCODE:<%= @promocode.code_spare_01 %>]
+            <%= number_to_currency(code_now) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(@promocode.code_pct, precision: 0) %> off by PROMO CODE: <%= @promocode.code_spare_01 %> ]
           <% else %>
              <%= number_to_currency(@promocode.code_icode_price) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(hotdeal_pct, precision: 0) %> off ]
           <% end %>
           , shipping is free w/Prime or on $25+ // If you want to find more coupons visit "hotdealful.com" 
-          #amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonmusthave #amazonfinds #amazonthingstobuyon #amazonprime
+          #amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonmusthave #amazonfinds #amazonthingstobuyon #amazonprime #hotdealpromotion
         </p>
        </div>
 
