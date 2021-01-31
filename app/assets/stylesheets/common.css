@@ -224,5 +224,56 @@ a.set_reset_m{display:none;}
   .search-pct .tg tr td a:hover{color:#000;}
 }
 
+/* Footer Section */
+.footer{position:relative;width:100%;height:50px;background:#ffea92;}
+.footer ul{position:absolute;bottom:8.5px;background:rgba(0,0,0,0.2);text-align:center;left:50%;transform:translate(-50%,0);width:25%;border-radius:20px;padding:5px;}
+.footer ul li{}
+.footer ul li a{color:#ffea92;display:block;}
+
+@media screen and (max-width:640px){
+  .footer ul{width:80%;}
+}
+
+/* About Us Page */
+.about_us{width:1000px;margin:80px auto 0 auto;}
+.about_us .sections{margin-bottom:50px;border-bottom:1px solid #ccc;padding-bottom:10px;}
+.about_us h2{margin-bottom:15px;color:#fff;background:#000;padding:7px 10px;border-radius:10px;display:inline-block;}
+.about_us h3{padding:0 10px;margin-bottom:5px;font-size:20px;}
+.about_us p{padding:0 10px;margin-bottom:15px;line-height:25px;}
+.about_us .headline{font-size:120px;font-weight:bold;margin-bottom:-18px;}
+.about_us .headline em a{font-size:17px;color:#fff;}
+.about_us .mission .under_head{margin-bottom:55px;}
+.about_us .mission .left,
+.about_us .mission .right{float:left;width:48%;margin:0 1%;}
+.about_us .mission p span{font-size:40px;font-weight:bold;}
+.about_us .mission .bodyline{margin-bottom:35px;}
+.about_us .mission .whatis{margin-top:75px;}
+.about_us .works .works_box{float:left;width:31.33%;margin:15px 1% 0 1%;text-align:center;}
+.about_us .bodyline{font-size:40px;font-weight:bold;}
+.about_us .qna p.email{font-size:25px;text-decoration:none;background:#ffea92;color:#fff;padding:5px 20px;margin-right:10px;float:right;border-radius:10px;}
+
+@media screen and (max-width:640px){
+  .about_us{width:100%;margin-top:30px;}
+  .about_us .sections{margin:10px;}
+  .about_us .headline{font-size:50px;margin-bottom:-10px;}
+  .about_us .headline em a{font-size:25px;color:#fff;}
+  .about_us h2{font-size:15px;}
+  .about_us h3{padding:0;}
+  .about_us p{margin-bottom:20px;}
+  .about_us .mission .under_head{margin-bottom:30px;}
+  .about_us .mission .left,
+  .about_us .mission .right{float:none;width:100%;margin:0;}
+  .about_us .mission p span{font-size:25px;}
+  .about_us .qna{margin-top:30px;padding:10px;}
+  .about_us .qna p{padding:0;}
+  .about_us .qna a{width:100%;font-size:19px;display:block;margin:0;}
+  .about_us .qna p.email{font-size:15px;}
+  .about_us .mission .whatis{margin-top:30px;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .about_us{width:100%;margin-top:120px;}
+}
+
 
 

@@ -32,7 +32,7 @@
   .product-border .card .image-box img{width:70%;height:70%;}
   .visual .search-index input{padding:10px;width:100%;}
   .pick-hash{margin:0 1% 20px 1%;}
-  .pick-hash a{font-size:15px;padding:10px 20px;}
+  .pick-hash a{font-size:15px;padding:10px 20px;float:left;width:48%;margin:0 1% 15px 1%;text-align:center;}
 
 }
 
