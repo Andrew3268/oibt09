@@ -72,6 +72,7 @@
 
 
 
+.notice-hidden{visibility:hidden;}
 .show_notice{}
 .accordion-item{position:relative;}
 .accordion-item.active .heading{color: #8da98c;}

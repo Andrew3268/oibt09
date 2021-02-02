@@ -3,271 +3,292 @@
 
     <div class="container clearfix">
       <a href="/"><img class="go_back" src="<%=asset_path 'go_back.png' %>" alt="Go bact to home" /></a>
-      <div class="image-box clearfix">
-        <img src="<%= @promocode.code_image %>" alt="<%= @promocode.code_title %>" title="<%= @promocode.code_title %>" />
-      </div>
-
-      <% if current_user && current_user.admin %>
-        <div class="macro-btn">
-          <a class="back-btn" href="/" data-turbolinks="false">Back</a>
-          <button id="facebook_btn">FBcopy</button>
-          <%= render 'promocodes/sns' %>
-          <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
+      <div class="content-section clearfix">
+        <div class="image-box clearfix">
+          <img src="<%= @promocode.code_image %>" alt="<%= @promocode.code_title %>" title="<%= @promocode.code_title %>" />
         </div>
-      <% end %>
 
-      <div class="inner-box clearfix">
-        <div class="title">
-          <h2 class="line-break-02"><%= @promocode.code_title %></h2>
-        </div>
-        <h2 class="summary_title">SUMMARY</h2>
-        <div class="receipt">
-          <!-- Button Section - Text(left) -->
-          <div class="receipt__grid1">
-            <p>Offer Price</p>
-            
-            <!-- if it has cash coupon -->
-            <% if @promocode.code_spare_41.present? %>
-
-              <% if @promocode.code_spare_01.present? %>
-                <p>Coupon</p>
-                <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
-                <p>Promotion Code</p>
-              <% else %>
-                <% promocode_pct = 0 %>
-                <% promocode_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
-                <p>Discount (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</p>
-                <p>Coupon</p>
-              <% end %>
-
-            <!-- if it has sale coupon -->
-            <% elsif @promocode.code_spare_42.present? %>
-              <% if @promocode.code_spare_01.present? %>
-                <p>Coupon (<%= number_to_percentage(@promocode.code_spare_42, precision: 0) %> off)</p>
-                <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
-                <p>Promotion Code</p>
-              <% else %>
-                <% promocode_pct = 0 %>
-                <% promocode_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
-                <p>Discount (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</p>
-                <p>Coupon (<%= number_to_percentage(@promocode.code_spare_42, precision: 0) %> off)</p>
-              <% end %>
-            
-            <% else %>
-              <% if @promocode.code_spare_01.present? %>
-                <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
-                <p>Promotion Code</p>
-              <% else %>
-                <% promocode_pct = 0 %>
-                <% promocode_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
-                <p>Discount (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</p>
-              <% end %>
-            <% end %>
-
-
-            <hr>
-
-            <p class="total_text">Total</p>
+        <% if current_user && current_user.admin %>
+          <div class="macro-btn">
+            <a class="back-btn" href="/" data-turbolinks="false">Back</a>
+            <button id="facebook_btn">FBcopy</button>
+            <%= render 'promocodes/sns' %>
+            <button class="btn-default js-copybtn"><span class="glyphicon glyphicon-copy"></span> TWcopy </button>
           </div>
+        <% end %>
 
-          <!-- Summary Section - Price(right) -->
-          <div class="receipt__grid2">
-            <p><em>-</em> <%= number_to_currency(@promocode.code_wacode_price) %></p>
-
-            <% if @promocode.code_spare_41.present? %> <!-- cash coupon------------------------------------------------->
-              <% if @promocode.code_spare_01.present? %>
-                <% promo_price = 0 %>
-                <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
-                <p>- <%= number_to_currency(@promocode.code_spare_41) %></p>
-                <p>- <%= number_to_currency(promo_price) %></p>
-                
-                <p class="p-code"><%= @promocode.code_spare_01 %></p>
-              <% else %>
-                <% discount_price = 0 %>
-                <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
-                <p>- <%= number_to_currency(discount_price) %></p>
-                <p>- <%= number_to_currency(@promocode.code_spare_41) %></p>
-              <% end %>
-
-              <hr>
-
-              <% if @promocode.code_spare_01.present? %>
-                <% promo_total = 0 %>
-                <% promo_total = @promocode.code_wacode_price -  promo_price %>
-                <% total_promo_cash_coupon = promo_total - @promocode.code_spare_41 %>
-                <p class="total_price "><%= number_to_currency(total_promo_cash_coupon) %></p>
-              <% else %>
-                <% total_w_cash_coupon = @promocode.code_icode_price.to_f - @promocode.code_spare_41 %>
-                <p class="total_price "><%= number_to_currency(total_w_cash_coupon) %></p>
-              <% end %>
-
-            <% elsif @promocode.code_spare_42.present? %> <!-- sale coupon -------------------------------------------->
+        <div class="inner-box clearfix">
+          <div class="title">
+            <h2 class="line-break-02"><%= @promocode.code_title %></h2>
+          </div>
+          <h2 class="summary_title">SUMMARY</h2>
+          <div class="receipt">
+            <!-- Button Section - Text(left) -->
+            <div class="receipt__grid1">
+              <p>Offer Price</p>
               
-              <% if @promocode.code_spare_01.present? %>
-                <% sale_coupon_wp = 0 %>
-                <% sale_coupon_wp = (@promocode.code_wacode_price.to_f * @promocode.code_spare_42 / 100) %>
-                <% promo_price = 0 %>
-                <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
-                <p>- <%= number_to_currency(sale_coupon_wp) %></p>
-                <p>- <%= number_to_currency(promo_price) %></p>
-                <p class="p-code"><%= @promocode.code_spare_01 %></p>
+              <!-- if it has cash coupon -->
+              <% if @promocode.code_spare_41.present? %>
+
+                <% if @promocode.code_spare_01.present? %>
+                  <p>Coupon</p>
+                  <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+                  <p>Promotion Code</p>
+                <% else %>
+                  <% promocode_pct = 0 %>
+                  <% promocode_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
+                  <p>Discount (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</p>
+                  <p>Coupon</p>
+                <% end %>
+
+              <!-- if it has sale coupon -->
+              <% elsif @promocode.code_spare_42.present? %>
+                <% if @promocode.code_spare_01.present? %>
+                  <p>Coupon (<%= number_to_percentage(@promocode.code_spare_42, precision: 0) %> off)</p>
+                  <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+                  <p>Promotion Code</p>
+                <% else %>
+                  <% promocode_pct = 0 %>
+                  <% promocode_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
+                  <p>Discount (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</p>
+                  <p>Coupon (<%= number_to_percentage(@promocode.code_spare_42, precision: 0) %> off)</p>
+                <% end %>
+              
               <% else %>
-                <% sale_coupon = 0 %>
-                <% sale_coupon = (@promocode.code_icode_price.to_f * @promocode.code_spare_42 / 100) %>
-                <% discount_price = 0 %>
-                <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
-                <p>- <%= number_to_currency(discount_price) %></p>
-                <p>- <%= number_to_currency(sale_coupon) %></p>
+                <% if @promocode.code_spare_01.present? %>
+                  <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+                  <p>Promotion Code</p>
+                <% else %>
+                  <% promocode_pct = 0 %>
+                  <% promocode_pct =  (@promocode.code_wacode_price.to_i - @promocode.code_icode_price.to_i) / @promocode.code_wacode_price * 100 %>
+                  <p>Discount (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</p>
+                <% end %>
               <% end %>
+
 
               <hr>
 
-              <% if @promocode.code_spare_01.present? %>
-                <% promo_total = 0 %>
-                <% promo_total = @promocode.code_wacode_price -  promo_price %>
-                <% total_promo_sale_coupon = promo_total - sale_coupon_wp %>
-                <p class="total_price "><%= number_to_currency(total_promo_sale_coupon) %></p>
-              <% else %>
-              <% total_w_sale_coupon = @promocode.code_icode_price.to_f - sale_coupon %>
-                <p class="total_price "><%= number_to_currency(total_w_sale_coupon) %></p>
+              <p class="total_text">Total</p>
+            </div>
+
+            <!-- Summary Section - Price(right) -->
+            <div class="receipt__grid2">
+              <p><em>-</em> <%= number_to_currency(@promocode.code_wacode_price) %></p>
+
+              <% if @promocode.code_spare_41.present? %> <!-- cash coupon------------------------------------------------->
+                <% if @promocode.code_spare_01.present? %>
+                  <% promo_price = 0 %>
+                  <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
+                  <p>- <%= number_to_currency(@promocode.code_spare_41) %></p>
+                  <p>- <%= number_to_currency(promo_price) %></p>
+                  
+                  <p class="p-code"><%= @promocode.code_spare_01 %></p>
+                <% else %>
+                  <% discount_price = 0 %>
+                  <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
+                  <p>- <%= number_to_currency(discount_price) %></p>
+                  <p>- <%= number_to_currency(@promocode.code_spare_41) %></p>
+                <% end %>
+
+                <hr>
+
+                <% if @promocode.code_spare_01.present? %>
+                  <% promo_total = 0 %>
+                  <% promo_total = @promocode.code_wacode_price -  promo_price %>
+                  <% total_promo_cash_coupon = promo_total - @promocode.code_spare_41 %>
+                  <p class="total_price "><%= number_to_currency(total_promo_cash_coupon) %></p>
+                <% else %>
+                  <% total_w_cash_coupon = @promocode.code_icode_price.to_f - @promocode.code_spare_41 %>
+                  <p class="total_price "><%= number_to_currency(total_w_cash_coupon) %></p>
+                <% end %>
+
+              <% elsif @promocode.code_spare_42.present? %> <!-- sale coupon -------------------------------------------->
+                
+                <% if @promocode.code_spare_01.present? %>
+                  <% sale_coupon_wp = 0 %>
+                  <% sale_coupon_wp = (@promocode.code_wacode_price.to_f * @promocode.code_spare_42 / 100) %>
+                  <% promo_price = 0 %>
+                  <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
+                  <p>- <%= number_to_currency(sale_coupon_wp) %></p>
+                  <p>- <%= number_to_currency(promo_price) %></p>
+                  <p class="p-code"><%= @promocode.code_spare_01 %></p>
+                <% else %>
+                  <% sale_coupon = 0 %>
+                  <% sale_coupon = (@promocode.code_icode_price.to_f * @promocode.code_spare_42 / 100) %>
+                  <% discount_price = 0 %>
+                  <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
+                  <p>- <%= number_to_currency(discount_price) %></p>
+                  <p>- <%= number_to_currency(sale_coupon) %></p>
+                <% end %>
+
+                <hr>
+
+                <% if @promocode.code_spare_01.present? %>
+                  <% promo_total = 0 %>
+                  <% promo_total = @promocode.code_wacode_price -  promo_price %>
+                  <% total_promo_sale_coupon = promo_total - sale_coupon_wp %>
+                  <p class="total_price "><%= number_to_currency(total_promo_sale_coupon) %></p>
+                <% else %>
+                <% total_w_sale_coupon = @promocode.code_icode_price.to_f - sale_coupon %>
+                  <p class="total_price "><%= number_to_currency(total_w_sale_coupon) %></p>
+                <% end %>
+
+              <% else %><!------------------------------------------------------------------------------------------------>
+
+                <% if @promocode.code_spare_01.present? %>
+                  <% promo_price = 0 %>
+                  <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
+                  <p>- <%= number_to_currency(promo_price) %></p>
+                  <p class="p-code"><%= @promocode.code_spare_01 %></p>
+                <% else %>
+                  <% discount_price = 0 %>
+                  <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
+                  <p>- <%= number_to_currency(discount_price) %></p>
+                <% end %>
+
+                <hr>
+
+                <% if @promocode.code_spare_01.present? %>
+                  <% promo_total = 0 %>
+                  <% promo_total = @promocode.code_wacode_price -  promo_price %>
+                  <p class="total_price "><%= number_to_currency(promo_total) %></p>
+                <% else %>
+                  <p class="total_price "><%= number_to_currency(@promocode.code_icode_price) %></p>
+                <% end %>
+
               <% end %>
-
-            <% else %><!------------------------------------------------------------------------------------------------>
-
-              <% if @promocode.code_spare_01.present? %>
-                <% promo_price = 0 %>
-                <% promo_price = (@promocode.code_pct.to_f / 100) * @promocode.code_wacode_price.to_f %>
-                <p>- <%= number_to_currency(promo_price) %></p>
-                <p class="p-code"><%= @promocode.code_spare_01 %></p>
-              <% else %>
-                <% discount_price = 0 %>
-                <% discount_price = @promocode.code_wacode_price.to_f - @promocode.code_icode_price.to_f %>
-                <p>- <%= number_to_currency(discount_price) %></p>
-              <% end %>
-
-              <hr>
-
-              <% if @promocode.code_spare_01.present? %>
-                <% promo_total = 0 %>
-                <% promo_total = @promocode.code_wacode_price -  promo_price %>
-                <p class="total_price "><%= number_to_currency(promo_total) %></p>
-              <% else %>
-                <p class="total_price "><%= number_to_currency(@promocode.code_icode_price) %></p>
-              <% end %>
-
-            <% end %>
-            
+              
+            </div>
           </div>
-        </div>
 
-        <!-- Button Section -->
-        <div class="btn">
-          <a class="amz_btn" target="_blank" href="<%= @promocode.code_link %>">Check it out at Amazon</a>
+          <!-- Button Section -->
+          <div class="btn">
+            <a class="amz_btn" target="_blank" href="<%= @promocode.code_link %>">Check it out at Amazon</a>
 
-          <% if current_user && current_user.admin %>
-            <div class="admin">
-              <%= link_to 'Back', promocodes_path %> | 
-              <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
-              <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <p>HASHTAG:<%= render_with_hashtags(@promocode.code_hashtag) %></p>
+            <% if current_user && current_user.admin %>
+              <div class="admin">
+                <%= link_to 'Back', promocodes_path %> | 
+                <%= link_to 'Edit', edit_promocode_path(@promocode) %> |
+                <%= link_to 'Destroy', @promocode, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <p>HASHTAG:<%= render_with_hashtags(@promocode.code_hashtag) %></p>
+              </div>
+            <% end %>
+          </div>
+
+          <% if @promocode.code_spare_01.present? %>
+            <div class="show_notice clearfix">
+              <div class="accordion">
+                <div class="accordion-item">
+                    <a href="#" class="heading">
+                        <div class="icon"></div>
+                        <div class="notice-title">Why is the promo code not working?</div>
+                    </a>
+                    <div class="content">
+                        <p>Amazon promotional codes can expire quickly. If this code doesn't work, the promotion has ended.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="notice-hidden">
+              <div class="show_notice clearfix">
+                <div class="accordion">
+                  <div class="accordion-item">
+                      <a href="#" class="heading">
+                          <div class="icon"></div>
+                          <div class="notice-title">Why is the promo code not working?</div>
+                      </a>
+                      <div class="content">
+                          <p>Amazon promotional codes can expire quickly. If this code doesn't work, the promotion has ended.</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
-
-        <% if @promocode.code_spare_01.present? %>
-          <div class="show_notice clearfix">
-            <div class="accordion">
-              <div class="accordion-item">
-                  <a href="#" class="heading">
-                      <div class="icon"></div>
-                      <div class="notice-title">Why is the promo code not working?</div>
-                  </a>
-                  <div class="content">
-                      <p>Amazon promotional codes can expire quickly. If this code doesn't work, the promotion has ended.</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      </div><!-- ./content-section-->
       
 
-      <!-- SNS Sharing Section -->
-      <% if current_user && current_user.admin %>
-      <div class="pin-share clearfix">
-          <p>Available this now at Amazon.com for 
-            <% if @promocode.code_spare_01.present? %>
-              <% code_now = 0 %>
-              <% code_now = @promocode.code_wacode_price - promo_price %>
-              <%= number_to_currency(code_now) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(@promocode.code_pct, precision: 0) %> off by PROMO CODE: <%= @promocode.code_spare_01 %> ]
-            <% else %>
-               <%= number_to_currency(@promocode.code_icode_price) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(promocode_pct, precision: 0) %> off ]
-            <% end %>
-            , shipping is free w/Prime or on $25+ // If you want to find more coupons visit "promocodeful.com" 
-            #amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonmusthave #amazonfinds #amazonthingstobuyon #amazonprime #promocodepromotion
-          </p>
-      </div>
 
-
-        <div class="sharing clearfix"">
-          <span id="facebook_ctn">
-            <p>Available at Amazon NOW!!</p>
-            <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
-
-            <% if @promocode.code_spare_01.present? %>
-              <% code_now = 0%>
-              <% code_now = @promocode.code_wacode_price - promo_price %>
-              <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
-              <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
-              <p>Code: <%= @promocode.code_spare_01 %></p>
-            <% else %>
-              <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</span>
-              <p>You can save: <%= number_to_currency(discount_price) %></p> 
-            <% end %>
-            <p>Shipping is free w/Prime or on $25+</p>
-            <p><%= @promocode.code_link %></p>
-            <p>If you want to find more coupons visit "promocodeful.com"</p>
-            <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonprime</p>
-          </span>
+      <div class="sharing-section clearfix">
+        <!-- SNS Sharing Section -->
+        <% if current_user && current_user.admin %>
+        <div class="pin-share clearfix">
+            <p>Available this now at Amazon.com for 
+              <% if @promocode.code_spare_01.present? %>
+                <% code_now = 0 %>
+                <% code_now = @promocode.code_wacode_price - promo_price %>
+                <%= number_to_currency(code_now) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(@promocode.code_pct, precision: 0) %> off by PROMO CODE: <%= @promocode.code_spare_01 %> ]
+              <% else %>
+                 <%= number_to_currency(@promocode.code_icode_price) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(promocode_pct, precision: 0) %> off ]
+              <% end %>
+              , shipping is free w/Prime or on $25+ // If you want to find more coupons visit "promocodeful.com" 
+              #amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonmusthave #amazonfinds #amazonthingstobuyon #amazonprime #promocodepromotion
+            </p>
         </div>
-        
-        <hr>
 
-        <div class="twitter-container clearfix"">
-          <div class="row">
-            <div class="col-md-12">
-               <span class="js-copytext"> 
-                <div class="sharing">
-                  <span>
-                    <p>Available at Amazon NOW!!</p>
-                    <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
 
-                    <% if @promocode.code_spare_01.present? %>
-                      <% code_now = 0%>
-                      <% code_now = @promocode.code_wacode_price - promo_price %>
-                      <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
-                      <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
-                      <p>Code: <%= @promocode.code_spare_01 %></p>
-                      <!-- <p>http://promocodeful.com/promocodes/<%=(params[:id]) %></p> -->
-                    <% else %>
-                      <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</span>
-                      <p>You can save: <%= number_to_currency(discount_price) %></p> 
-                    <% end %>
-                    <p>Visit "promocodeful.com" to find more coupons</p>
-                    <p><%= @promocode.code_link %></p>
-                    
-                    <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #amazonprime</p>
-                  </span>
-                </div>
-              </span>
-            </div>
-         </div>
-        </div>
-        <!-- Pinterest -->
-        <!-- <div class="pinterest">
-         <script async defer data-pin-hover="true" data-pin-tall="true" src="//assets.pinterest.com/js/pinit.js"></script>
-        </div> -->
-      <% end %>
+          <div class="sharing clearfix"">
+            <span id="facebook_ctn">
+              <p>Available at Amazon NOW!!</p>
+              <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
+
+              <% if @promocode.code_spare_01.present? %>
+                <% code_now = 0%>
+                <% code_now = @promocode.code_wacode_price - promo_price %>
+                <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
+                <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
+                <p>Code: <%= @promocode.code_spare_01 %></p>
+              <% else %>
+                <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</span>
+                <p>You can save: <%= number_to_currency(discount_price) %></p> 
+              <% end %>
+              <p>Shipping is free w/Prime or on $25+</p>
+              <p><%= @promocode.code_link %></p>
+              <p>If you want to find more coupons visit "promocodeful.com"</p>
+              <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonprime</p>
+            </span>
+          </div>
+          
+          <hr>
+
+          <div class="twitter-container clearfix"">
+            <div class="row">
+              <div class="col-md-12">
+                 <span class="js-copytext"> 
+                  <div class="sharing">
+                    <span>
+                      <p>Available at Amazon NOW!!</p>
+                      <p class="was_price">Was: <%= number_to_currency(@promocode.code_wacode_price) %></p>
+
+                      <% if @promocode.code_spare_01.present? %>
+                        <% code_now = 0%>
+                        <% code_now = @promocode.code_wacode_price - promo_price %>
+                        <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
+                        <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
+                        <p>Code: <%= @promocode.code_spare_01 %></p>
+                        <!-- <p>http://promocodeful.com/promocodes/<%=(params[:id]) %></p> -->
+                      <% else %>
+                        <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</span>
+                        <p>You can save: <%= number_to_currency(discount_price) %></p> 
+                      <% end %>
+                      <p>Visit "promocodeful.com" to find more coupons</p>
+                      <p><%= @promocode.code_link %></p>
+                      
+                      <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #amazonprime</p>
+                    </span>
+                  </div>
+                </span>
+              </div>
+           </div>
+          </div>
+          <!-- Pinterest -->
+          <!-- <div class="pinterest">
+           <script async defer data-pin-hover="true" data-pin-tall="true" src="//assets.pinterest.com/js/pinit.js"></script>
+          </div> -->
+        <% end %>
+      </div><!--./sharing-section-->
 
 
     </div><!--./container-->
