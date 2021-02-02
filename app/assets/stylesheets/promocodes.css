@@ -98,6 +98,7 @@
   .show-wrap .container .go_back{display:block;width:40px;height:40px;opacity:0.1;margin:1em 0 0 1.5em;}
   .show-wrap .image-box{width:100%;height:300px;margin:0;}
   .show-wrap .image-box img{width:75%;height:75%;}
+  .show-wrap .inner-box{float:none;width:100%;margin:0;}
   .show-wrap .summary_title{margin:0.5em 3em -2.5em 1.2em;float:none;}
   .show-wrap .receipt{float:none;margin:3em 2em 0 2em;width:auto;}
   .show-wrap .receipt__grid1{margin-top:1.1em;font-size:15px;}

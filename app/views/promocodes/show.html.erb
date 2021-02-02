@@ -31,8 +31,8 @@
               <% if @promocode.code_spare_41.present? %>
 
                 <% if @promocode.code_spare_01.present? %>
-                  <p>Coupon</p>
-                  <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+                  <p>Discount <span>by coupon</span></p>
+                  <p>Discount <span>by code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
                   <p>Promotion Code</p>
                 <% else %>
                   <% promocode_pct = 0 %>
@@ -44,8 +44,8 @@
               <!-- if it has sale coupon -->
               <% elsif @promocode.code_spare_42.present? %>
                 <% if @promocode.code_spare_01.present? %>
-                  <p>Coupon (<%= number_to_percentage(@promocode.code_spare_42, precision: 0) %> off)</p>
-                  <p>Discount <span>by Code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
+                  <p>Discount <span>by coupon</span> (<%= number_to_percentage(@promocode.code_spare_42, precision: 0) %> off)</p>
+                  <p>Discount <span>by code</span> (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</p>
                   <p>Promotion Code</p>
                 <% else %>
                   <% promocode_pct = 0 %>
