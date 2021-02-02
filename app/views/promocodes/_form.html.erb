@@ -10,13 +10,18 @@
       <%= f.input :code_hashtag, label: "Hashtag" %>
       <%= f.input :code_spare_01, label: "Promotion Code" %>
     </div>
-    <div class="pricing">
+    <div class="pricing clearfix">
       <%= f.input :code_wacode_price, label: "List Price" %>
       <%= f.input :code_icode_price, label: "Current Price(for hotdeal)" %>
       <%= f.input :code_pct, label: "Percentage(for code)" %>
+      <%= f.input :code_spare_41, label: "Coupon by $$" %>
+      <%= f.input :code_spare_42, label: "Coupons by pct" %>
+    </div>
+    
+    <!-- <div class="pricing">
       <%= f.input :code_rating, label: "Rating" %>
       <%= f.input :code_review_count, label: "Review Count" %>
-    </div>
+    </div> -->
     
 
     <div class="form-actions" data-turbolinks="false">
