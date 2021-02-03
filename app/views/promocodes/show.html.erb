@@ -223,7 +223,7 @@
               <% else %>
                  <%= number_to_currency(@promocode.code_icode_price) %> [ Was: <%= number_to_currency(@promocode.code_wacode_price) %> | <%= number_to_percentage(promocode_pct, precision: 0) %> off ]
               <% end %>
-              , shipping is free w/Prime or on $25+ // If you want to find more coupons visit "promocodeful.com" 
+              , shipping is free w/Prime or on $25+ // If you want to find more coupons visit "hotdealful.com" 
               #amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonmusthave #amazonfinds #amazonthingstobuyon #amazonprime #promocodepromotion
             </p>
         </div>
@@ -246,7 +246,7 @@
               <% end %>
               <p>Shipping is free w/Prime or on $25+</p>
               <p><%= @promocode.code_link %></p>
-              <p>If you want to find more coupons visit "promocodeful.com"</p>
+              <p>If you want to find more coupons visit "hotdealful.com"</p>
               <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #coupons #amazonprime</p>
             </span>
           </div>
@@ -268,12 +268,12 @@
                         <span class="is_price">Now: <%= number_to_currency(code_now) %> | (<%= number_to_percentage(@promocode.code_pct, precision: 0) %> off)</span>
                         <p>You can save:<%= number_to_currency(promo_price) %> by promotion code</p> 
                         <p>Code: <%= @promocode.code_spare_01 %></p>
-                        <!-- <p>http://promocodeful.com/promocodes/<%=(params[:id]) %></p> -->
+                        <!-- <p>http://hotdealful.com/promocodes/<%=(params[:id]) %></p> -->
                       <% else %>
                         <span class="is_price">Now: <%= number_to_currency(@promocode.code_icode_price) %> | (<%= number_to_percentage(promocode_pct, precision: 0) %> off)</span>
                         <p>You can save: <%= number_to_currency(discount_price) %></p> 
                       <% end %>
-                      <p>Visit "promocodeful.com" to find more coupons</p>
+                      <p>Visit "hotdealful.com" to find more coupons</p>
                       <p><%= @promocode.code_link %></p>
                       
                       <p class="hashtag">#amazon #amazondeals #amazoncoupons #promocodes #amazonprime</p>
