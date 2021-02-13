@@ -14,6 +14,7 @@ namespace :deploy do
    on roles(:app) do
      within release_path do
        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
+       execute :bundle, :exec, :rake, 'sitemap:refresh RAILS_ENV=production'
      end
    end
  end
