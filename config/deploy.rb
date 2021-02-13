@@ -4,6 +4,8 @@ lock "~> 3.15.0"
 set :application, "oibt09"
 set :repo_url, "git@github.com:Andrew3268/oibt09.git"
 set :passenger_restart_with_touch, true
+set :sitemap_roles, :web # default
+
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"

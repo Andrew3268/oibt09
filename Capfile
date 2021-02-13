@@ -8,6 +8,8 @@ require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano/rails/console'
+require 'capistrano/sitemap_generator'
+
 
 
 set :rbenv_type, :user
