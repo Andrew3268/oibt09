@@ -9,6 +9,7 @@ require 'capistrano/passenger'
 require 'capistrano/rbenv'
 require 'capistrano/rails/console'
 require 'capistrano/sitemap_generator'
+require 'whenever/capistrano'
 
 
 

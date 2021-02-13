@@ -19,6 +19,18 @@ set :keep_releases, 5
 # This is useful if you don't want to use ENV variables
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
+after 'deploy:restart', 'deploy:sitemap'
+
+namespace :deploy do
+
+desc 'Generate sitemap'
+task :sitemap do
+  on roles(:app) do
+    within release_path do
+      execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
+    end
+  end
+end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
