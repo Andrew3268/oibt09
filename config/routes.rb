@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/promocodes/hashtag/:name', to: 'promocodes#hashtags'
 
   get 'bridge/marketing'
+  get 'bridge/posting'
   get 'bridge/search'
   get 'bridge/about_us'
   get 'bridge/withpromocode'

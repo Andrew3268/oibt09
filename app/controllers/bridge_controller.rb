@@ -4,6 +4,10 @@ class BridgeController < ApplicationController
     @promocodes = Promocode.all.order("created_at DESC").limit(20)
   end
 
+  def posting
+    @promocodes = Promocode.all.order("created_at DESC")
+  end
+
   def withpromocode
     @pagy, @promocodes = pagy(Promocode.all.order("created_at DESC"), items: 80)
     @categories = Category.all

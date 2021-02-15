@@ -17,13 +17,15 @@
             
             <p>Code: <%= promocode.code_spare_01 %></p>
           <% else %>
-            <p>Now: <%= number_to_currency(promocode.code_icode_price) %> | (<%= number_to_percentage(promocode.code_pct, precision: 0) %> off)</p>
+            <% hotdeal_pct = 0 %>
+            <% hotdeal_pct =  (promocode.code_wacode_price - promocode.code_icode_price) / promocode.code_wacode_price * 100 %>
             
+            <p>Now: <%= number_to_currency(promocode.code_icode_price) %> | (<%= number_to_percentage(hotdeal_pct, precision: 0) %> off)</p>
           <% end %>
 
           Link: <a target="_blank" href="<%= promocode.code_link %>"><%= promocode.code_link %></a>
         </div>
-        <br>
+        <p>----------------------------------------------------------------</p>
       <% end %>
     </div>
 
@@ -49,7 +51,7 @@
           <!-- <a target="_blank" href="<%= promocode.code_link %>"><%= promocode.code_link %></a> -->
           <a target="_blank" href="/promocodes/<%= promocode.id %>">핫딜 확인하기</a>
         </div>
-        <br>
+        <p>----------------------------------------------------------------</p>
       <% end %>
     </div>
   </div>
