@@ -1,11 +1,11 @@
 class BridgeController < ApplicationController
 
   def marketing
-    @promocodes = Promocode.all.order("created_at DESC").limit(20)
+    @promocodes = Promocode.all.order("created_at DESC").limit(30)
   end
 
   def posting
-    @promocodes = Promocode.all.order("created_at DESC")
+    @promocodes = Promocode.all.order("created_at DESC").limit(75)
   end
 
   def withpromocode
