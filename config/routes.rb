@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :sitemap, :only => :index
+  get 'sitemap.xml', :controller => "sitemap", :action => "xml"
+
   resources :categories
   devise_for :users
   root 'promocodes#index'
