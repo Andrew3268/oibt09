@@ -18,4 +18,8 @@ class BridgeController < ApplicationController
     @categories = Category.all
   end
 
+  def delete
+    @promocodes = Promocode.all
+  end
+
 end

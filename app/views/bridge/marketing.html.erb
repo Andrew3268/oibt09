@@ -1,11 +1,19 @@
 <div class="top-box"></div>
 <% if current_user && current_user.admin %>
+
+
 <div class="marketing-wrapping">
   <div class="wrap">
+
+    <ul class="mt-menu clearfix">
+      <li><a href="/bridge/marketing">for facebook group&ko-usa site ||</a></li>
+      <li><a href="/bridge/posting"">for instagram & page</a></li>
+    </ul>
+
     <div class="fb-group">
       <% @promocodes.each do |promocode| %>
         <div class="marketing-box">
-          <p><%= promocode.code_title %></p>
+          <p class="line-break-01"><%= promocode.code_title %>"></p>
           <p>Was: <%= number_to_currency(promocode.code_wacode_price) %></p>
 
           <% if promocode.code_spare_01.present? %>
@@ -31,7 +39,7 @@
     <div class="kor-site">
       <% @promocodes.each do |promocode| %>
         <div class="marketing-box">
-          <p><%= promocode.code_title %></p>
+          <p class="line-break-01"><%= promocode.code_title %>"></p>
           <p>Was: <%= number_to_currency(promocode.code_wacode_price) %></p>
 
           <% if promocode.code_spare_01.present? %>

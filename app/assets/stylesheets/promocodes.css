@@ -162,13 +162,13 @@
 .find-coupon .couponbox-left p{font-size:30px;}
 .find-coupon .couponbox-left span{display:block;}
 .find-coupon .couponbox-left span a{background:#ffea92;color:rgba(0,0,0,0.2);padding:10px 20px;border-radius:10px;}
-.find-coupon .couponbox-right{float:left;width:45%;margin:39px 2.5% 2.5% 2.5%;}
+.find-coupon .couponbox-right{float:left;width:45%;margin:3.5% 2.5% 2.5% 2.5%;}
 .find-coupon .find-keyword{}
 .find-coupon .find-keyword input{width:100%;padding:20px;border-radius:20px;border:none;}
 .find-coupon .find-keyword input::placeholder{color:#ccc;}
 .find-coupon .index-coupon{visibility:hidden;}
 .find-coupon .index-coupon label{width:1%;font-size:0.5px;margin:0;}
-.find-coupon .find-btn{}
+.find-coupon .find-btn{margin-top:-10px;}
 .find-coupon .find-btn .btn-comm{background:#68d391;border-radius:20px;color:#fff;display:block;width:100%;font-size:25px;padding:13px;}
 .find-coupon .find-btn button{padding:10px;}
 .find-coupon .find-btn a{padding:6px;font-size:14px;}

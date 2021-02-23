@@ -1,7 +1,10 @@
 .marketing-wrapping{margin-top:10px;font-size:10px;}
 .marketing-wrapping .fb-group{float:left;width:48%;margin-right:2%;}
 .marketing-wrapping .kor-site{float:left;width:48%;margin-left:2%;}
-.marketing-wrapping .marketing-box{margin-bottom:15px;}
+.marketing-wrapping .marketing-box{}
+ul.mt-menu{}
+ul.mt-menu li{margin-right:10px;float:left;font-size:20px;}
+
 
 /* Posting page */
 .main-card{margin:50px auto 0 auto;width:1000px;}
