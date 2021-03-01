@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.15.0"
 
-set :application, "oigt09"
+set :application, "oibt09"
 set :repo_url, "git@github.com:Andrew3268/oibt09.git"
 set :passenger_restart_with_touch, true
 set :sitemap_roles, :web # default
@@ -29,8 +29,6 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
-
-
 
 
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
