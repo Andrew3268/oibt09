@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server '174.138.48.31', user: 'deploy', roles: %w{app db web}
+server '165.232.151.53', user: 'deploy', roles: %w{app db web}
 set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 

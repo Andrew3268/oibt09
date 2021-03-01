@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.15.0"
 
-set :application, "oibt09"
+set :application, "oigt09"
 set :repo_url, "git@github.com:Andrew3268/oibt09.git"
 set :passenger_restart_with_touch, true
 set :sitemap_roles, :web # default
